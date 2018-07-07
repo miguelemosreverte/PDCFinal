@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class LocalidadBean {
+
+	public LocalidadBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

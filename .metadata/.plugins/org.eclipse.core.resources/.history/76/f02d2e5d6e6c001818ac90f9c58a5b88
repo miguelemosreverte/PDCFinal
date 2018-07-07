@@ -1,0 +1,32 @@
+
+var JVideos= {
+		buscar: function() {
+			$("#result").html("<p>Procesando...</p>");
+			
+			$.ajax({
+				url: "./getvideos.jsp",
+				type: "get",
+				data: $("[name=crit_busq]").serialize(),
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+					$("#result").empty();
+				},
+				success: function(html) {
+					$("#result").html(html);
+				}
+			});	
+				
+		},
+        reproducir:function(e){
+        	console.log(e)
+        }
+}
+
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+	
+	$("li").bind("click",JVideos.reproducir(e));
+
+	});
+

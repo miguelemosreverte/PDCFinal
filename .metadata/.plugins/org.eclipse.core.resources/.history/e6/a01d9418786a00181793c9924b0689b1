@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+    <table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Ticket N&deg;</th>
+			<th>Fecha</th>
+			<th>Solicitante</th>
+			<th>Asunto</th>
+			<th>Texto</th>
+		</tr>
+	</thead>
+	<tbody>	
+	<%
+	LinkedList<VideoBean> videos = (LinkedList<VideoBean>)request.getAttribute("videos");
+	for(TicketBean ticket: tickets) {
+	%>
+	<tr>
+		<td><%= ticket.getTicket() %></td>
+		<td><%= ticket.getFechaTicket() %></td>
+		<td><%= ticket.getSolicitante() %></td>
+		<td><%= ticket.getAsuntoTicket() %></td>
+		<td><%= ticket.getTextoTicket() %></td>
+	</tr>
+	<%		
+	}	
+	%>
+	</tbody>
+</table>
+    

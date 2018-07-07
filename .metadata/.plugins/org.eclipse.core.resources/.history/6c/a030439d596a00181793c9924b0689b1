@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class CategoriaBean {
+
+	public CategoriaBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

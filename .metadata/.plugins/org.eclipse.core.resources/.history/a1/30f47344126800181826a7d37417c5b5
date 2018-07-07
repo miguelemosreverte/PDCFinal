@@ -1,0 +1,6 @@
+.validado {
+	border-color: green
+}
+.novalidado {
+	border-color: red
+}

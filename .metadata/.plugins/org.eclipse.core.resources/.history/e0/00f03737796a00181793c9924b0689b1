@@ -1,0 +1,24 @@
+jQuery(document).ready(function() {
+console.log("listo JQuery")
+
+});
+
+var jVideos = {
+		buscar: function() {
+        $("#result").html("<p>Procesando...</p>");
+			$.ajax({
+				url: "./getVideos.jsp",
+				type: "post",
+				data: $("#form").serialize(),
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+					$("#result").empty();
+				},
+				success: function(html) {
+					$("#result").html(html);
+				}
+			});
+		},
+		
+}

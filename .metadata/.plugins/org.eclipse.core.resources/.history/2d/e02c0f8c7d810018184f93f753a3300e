@@ -1,0 +1,14 @@
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+	$("#idContexto").on("change","#idProvincias",function(e){
+		console.log("migueee");
+	});
+
+});
+
+var JHoteles = {
+		a: function() {
+			
+		},
+		
+}

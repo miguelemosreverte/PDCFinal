@@ -1,0 +1,122 @@
+
+Jun 27, 2018 21:46:18.26 NEW SESSION
+Jun 27, 2018 21:46:18.26 
+Jun 27, 2018 21:46:18.26 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 21:46:18.26 
+Jun 27, 2018 21:46:21.78 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23fbe6f880 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 21:46:21.79 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23fbe6f880 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 21:46:23.11 
+Jun 27, 2018 21:46:23.11 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 21:46:23.11 
+Jun 27, 2018 21:47:54.85 
+Jun 27, 2018 21:47:54.85 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 21:47:54.85 
+Jun 27, 2018 21:48:05.43 
+Jun 27, 2018 21:48:05.43 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 21:48:05.43 
+Jun 27, 2018 22:42:01.62 [Child 19184, MediaPlayback #14] WARNING: Decoder=7f23e7df3200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 22:42:01.62 [Child 19184, MediaPlayback #14] WARNING: Decoder=7f23e7df3200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 22:42:01.64 [Child 19184, MediaPlayback #14] WARNING: Decoder=7f23e7df3200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 22:42:01.64 [Child 19184, MediaPlayback #14] WARNING: Decoder=7f23e7df3200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 22:57:25.33 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 22:57:25.33 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:16:42.28 [Child 19184, MediaPlayback #1] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:16:42.28 [Child 19184, MediaPlayback #1] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:16:42.28 [Child 19184, MediaPlayback #1] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:31:23.66 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:31:23.66 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:31:23.66 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:13.22 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:13.23 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:16.62 
+Jun 27, 2018 23:40:16.62 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 23:40:16.62 
+Jun 27, 2018 23:40:23.38 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:23.39 [Child 19184, MediaPlayback #1] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:23.41 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:23.42 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:23.44 [Child 19184, MediaPlayback #2] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:23.44 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e8563020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:24.35 
+Jun 27, 2018 23:40:24.35 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 27, 2018 23:40:24.35 
+Jun 27, 2018 23:40:30.87 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e85646a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:30.87 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e85646a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:30.90 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e85646a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:30.91 [Child 19184, MediaPlayback #2] WARNING: Decoder=7f23e85646a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:30.93 [Child 19184, MediaPlayback #3] WARNING: Decoder=7f23e85646a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jun 27, 2018 23:40:55.36 
+Jun 27, 2018 23:40:55.36 ###!!! [Parent][MessageChannel] Error: (msgtype=0x10003B,name=PBackground::Msg_DispatchLocalStorageChange) Channel closing: too late to send/recv, messages will be lost
+Jun 27, 2018 23:40:55.36 
+Jun 28, 2018 24:29:15.32 
+Jun 28, 2018 24:29:15.34 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jun 28, 2018 24:29:15.34 
+Jun 28, 2018 01:21:21.13 
+Jun 28, 2018 01:21:21.14 (/usr/lib/firefox/firefox:30599): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+
+Jun 28, 2018 15:38:18.79 NEW SESSION
+Jun 28, 2018 15:38:18.79 
+Jun 28, 2018 15:38:18.81 (/usr/lib/firefox/firefox:8962): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jun 28, 2018 15:44:34.44 
+Jun 28, 2018 15:44:34.44 (/usr/lib/firefox/firefox:9641): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jun 28, 2018 15:50:09.35 ATTENTION: default value of option force_s3tc_enable overridden by environment.
+Jun 28, 2018 15:50:09.82 
+Jun 28, 2018 15:50:09.82 (/usr/lib/firefox/firefox:9784): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jun 28, 2018 15:50:39.22 [Parent 9494, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+Jun 28, 2018 15:50:39.22 [Parent 9494, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+
+Jun 28, 2018 21:36:59.21 NEW SESSION
+Jun 28, 2018 21:36:59.21 [Child 26058, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+Jun 28, 2018 21:36:59.21 [Child 26058, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+Jun 28, 2018 21:36:59.21 [Child 26058, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+Jun 28, 2018 21:36:59.21 [Child 26058, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+
+Jul 03, 2018 22:08:45.86 NEW SESSION
+Jul 03, 2018 22:08:45.86 [Parent 12628, Gecko_IOThread] WARNING: pipe error (139): Connection reset by peer: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 03, 2018 22:11:16.35 [Child 14508, MediaPlayback #1] WARNING: Decoder=7f7e11070d40 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jul 03, 2018 22:11:16.50 
+Jul 03, 2018 22:11:16.50 ###!!! [Child][MessageChannel] Error: (msgtype=0x2C00AF,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+Jul 03, 2018 22:11:16.50 
+Jul 03, 2018 22:11:16.56 [GMP 14650, Chrome_ChildThread] WARNING: pipe error (21): Connection reset by peer: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 03, 2018 22:11:16.56 [Parent 12628, Gecko_IOThread] WARNING: pipe error (180): Connection reset by peer: file /build/firefox-d34xn2/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 03, 2018 22:11:16.56 
+Jul 03, 2018 22:11:16.56 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Jul 03, 2018 22:11:16.56 
+
+Jul 04, 2018 18:59:39.22 NEW SESSION
+Jul 04, 2018 18:59:39.22 
+Jul 04, 2018 18:59:39.25 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Jul 04, 2018 18:59:39.25 
+Jul 04, 2018 18:59:39.25 
+Jul 04, 2018 18:59:39.25 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Jul 04, 2018 18:59:39.25 
+
+Jul 04, 2018 20:33:18.55 NEW SESSION
+Jul 04, 2018 20:33:18.55 IPDL protocol error: Handler returned error code!
+Jul 04, 2018 20:33:18.56 
+Jul 04, 2018 20:33:18.56 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jul 04, 2018 20:33:18.56 
+
+Jul 04, 2018 22:04:44.43 NEW SESSION
+Jul 04, 2018 22:04:44.43 ATTENTION: default value of option force_s3tc_enable overridden by environment.
+Jul 04, 2018 22:04:44.50 [Child 10855, MediaPlayback #2] WARNING: Decoder=7f053d572400 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - mozilla::SupportChecker::AddMediaFormatChecker(const mozilla::TrackInfo&)::<lambda()>: Decoder may not have the capability to handle the requested video format with YUV444 chroma subsampling.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jul 04, 2018 22:04:45.00 
+Jul 04, 2018 22:04:45.00 (/usr/lib/firefox/firefox:10855): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jul 04, 2018 22:04:48.82 [Child 10855, MediaPlayback #2] WARNING: Decoder=7f053d5b5400 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - mozilla::SupportChecker::AddMediaFormatChecker(const mozilla::TrackInfo&)::<lambda()>: Decoder may not have the capability to handle the requested video format with YUV444 chroma subsampling.: file /build/firefox-d34xn2/firefox-60.0.2+build1/dom/media/MediaDecoderStateMachine.cpp, line 3445
+Jul 04, 2018 22:06:52.39 
+Jul 04, 2018 22:06:52.39 (/usr/lib/firefox/firefox:10891): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jul 04, 2018 22:08:03.18 ATTENTION: default value of option force_s3tc_enable overridden by environment.
+Jul 04, 2018 22:08:04.34 
+Jul 04, 2018 22:08:04.34 (/usr/lib/firefox/firefox:11070): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jul 04, 2018 23:59:32.68 
+Jul 04, 2018 23:59:32.68 (/usr/lib/firefox/firefox:13038): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+
+Jul 05, 2018 20:51:25.22 NEW SESSION
+Jul 05, 2018 20:51:25.22 
+Jul 05, 2018 20:51:25.29 (/usr/lib/firefox/firefox:14414): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+Jul 05, 2018 21:01:00.58 
+Jul 05, 2018 21:01:00.58 (/usr/lib/firefox/firefox:14735): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+
+Jul 06, 2018 22:51:23.12 NEW SESSION
+Jul 06, 2018 22:51:23.12 
+Jul 06, 2018 22:51:23.17 (/usr/lib/firefox/firefox:10289): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied

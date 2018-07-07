@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+	<description></description>
+	<tlib-version>2.1</tlib-version>
+	<short-name>customs</short-name>
+	<uri>/WEB-INF/tld/customs</uri>
+	<tag>
+       	<name>CustomTabla</name>
+    	<tag-class>ar.edu.ubp.pdc.tags.CustomTablaTagHandler</tag-class>
+        <tei-class>ar.edu.ubp.pdc.tags.CustomTablaTagHandlerExtraInfo</tei-class>
+    	<body-content>JSP</body-content>
+        <attribute>
+        	<name>cod</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>			
+		</attribute>
+	</tag>
+	<tag>
+		<name>CustomSelect</name>
+		<tag-class>ar.edu.ubp.pdc.tags.CustomSelectTagHandler</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>funcionJS</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+</taglib>

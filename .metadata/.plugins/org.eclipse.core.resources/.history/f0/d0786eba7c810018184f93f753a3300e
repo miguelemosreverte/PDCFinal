@@ -1,0 +1,14 @@
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+	$("#idContexto").on("change","#idProvincias",function(){
+		
+	});
+
+});
+
+var jX = {
+		a: function() {
+			
+		},
+		
+}

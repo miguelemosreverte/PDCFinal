@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/linux1/eclipse-workspace/XSLT"/>
+		<item value="/home/linux1/eclipse-workspace/XML"/>
+		<item value="/home/linux1/eclipse-workspace"/>
+		<item value="/home/linux1/eclipse-workspace/Prode-AJAX"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="565" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="416" key="DIALOG_HEIGHT"/>
+		<item value="519" key="DIALOG_X_ORIGIN"/>
+		<item value="164" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

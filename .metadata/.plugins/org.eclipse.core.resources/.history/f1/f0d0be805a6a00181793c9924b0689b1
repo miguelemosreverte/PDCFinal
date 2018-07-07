@@ -1,0 +1,74 @@
+package ar.edu.ubp.pdc.tags;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+import ar.edu.ubp.pdc.beans.CategoriaBean;
+
+import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.LinkedList;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+
+
+public class BusqVideosTagHandler extends SimpleTagSupport {
+
+	private String funcionJS;
+
+	public void setfuncionJS(String funcionJS) {
+		this.funcionJS = funcionJS;
+	}
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+		
+		Connection conn;
+		CallableStatement cstmt;
+		ResultSet result;
+		LinkedList<CategoriaBean> categorias;
+		CategoriaBean categoria;
+		try {
+		 	  Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
+		      conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc","sa", "98Thk7oo08L#F");
+			  cstmt = conn.prepareCall("{dbo.get_categorias_videos()}"); 
+	          result = cstmt.executeQuery();
+			  categorias = new LinkedList<CategoriaBean>();
+				while(result.next()) {
+					categoria = new CategoriaBean();
+					categoria.setNom_categoria(result.getString("nom_categoria"));
+					categoria.setNro_categoria(Integer.parseInt(result.getString("nro_categoria")));
+					categorias.add(categoria);
+				}
+			  
+			  cstmt.execute(); 
+			  cstmt.close();  
+			  conn.close();
+			
+			  for(CategoriaBean c : categorias) {
+					
+			}
+      
+			 } catch (Exception e) {
+				e.printStackTrace();
+		       }
+	
+		
+		
+	
+		JspWriter out = this.getJspContext().getOut();
+		out.println("<div class=\"form-group\">");
+		out.println("<label for=\"istring_busqueda\">Videos</label>");
+		out.println("<input type=\"text\" name=\"string_busqueda\" id=\"istring_busqueda\" maxlength=\"255\" class=\"form-control\" >");
+		out.println("<div>");
+		out.println("<div class=\"form-group\">");
+		out.println("<label for=\"F\" class=\"radio-inline control-label\"><input type=\"radio\" id=\"F\" name=\"ordenar_por\" value=\"F\" checked>Todos</label>");
+		out.println("<div>");
+		out.println("<button class=\"btn btn-primary\" onclick=\"" + funcionJS + "\">Buscar</button>");
+	}
+}
+

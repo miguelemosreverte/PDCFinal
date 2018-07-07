@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class Seleccion {
+
+	public Seleccion() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

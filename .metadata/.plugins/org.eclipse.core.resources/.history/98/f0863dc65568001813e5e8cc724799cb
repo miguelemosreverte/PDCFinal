@@ -1,0 +1,143 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+    
+    $("[name=radio_nro_chasis]").on("click change",() => {
+    	if( $("[name=radio_nro_chasis]:checked").val()==="S"){
+    		$("[name=nro_chasis]").prop('disabled', false);
+    		$("[name=dominio]").prop('disabled', false);
+    		$("[name=km]").prop('disabled', false);
+    		$("[name=aux]").show();
+    		}
+    	else if($("[name=radio_nro_chasis]:checked").val()==="N"){
+    		$("[name=nro_chasis]").prop('disabled', true);
+    		$("[name=dominio]").prop('disabled', true);
+    		$("[name=km]").prop('disabled', true);
+    		$("[name=aux]").hide();
+    		
+    	}
+    });
+    
+    $("[name=nro_chasis],[name=dominio]").bind("enterKey",function(e){
+    	if($("[name=nro_chasis]").val()!=="" && $("[name=dominio]").val()===""){
+    	 $("#istate_nro_chasis").html("Procesando...");
+    	 $.ajax({
+ 			url: "./validar.jsp",
+ 			type: "post",
+ 			data: $("[name=nro_chasis]").serialize(), 
+ 			datatype: "html",
+ 			error: function(hr) {
+ 				$("#istate_nro_chasis").empty();
+ 				$("#istate_nro_chasis").html("Error..");
+ 				console.log(hr);
+ 			},
+ 			success: function(html){
+ 				$("#istate_nro_chasis").empty();
+ 				$("#istate_nro_chasis").html(html);
+ 				if($("#istate_nro_chasis > img").hasClass("correcto")){
+   					$("[name=nro_chasis]").removeClass( "border border-success border-danger" ).addClass( "border border-success");
+   				}
+   				if($("#istate_nro_chasis > img").hasClass("incorrecto")){
+   					$("[name=nro_chasis]").removeClass( "border border-success border-danger" ).addClass( "border border-danger");
+   				}
+   				
+ 			} 			
+ 		 });
+       }
+    	
+        if($("[name=nro_chasis]").val()!=="" && $("[name=dominio]").val()!=="")
+        {
+    	  $("#istate_nro_chasis").html("Procesando...");
+    	  $("#istate_dominio").html("Procesando...");
+      	  $.ajax({
+   			url: "./validar.jsp",
+   			type: "post",
+   			data: $("[name=nro_chasis],[name=dominio]").serialize(), 
+   			datatype: "html",
+   			error: function(hr) {
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html("Error..");
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html("Error..");
+   				console.log(hr);
+   			},
+   			success: function(html){
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html(html);
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html(html);
+   				
+   				if($("#istate_nro_chasis > img").hasClass("correcto")){
+   					$("[name=nro_chasis]").removeClass( "border border-success border-danger" ).addClass( "border border-success");
+   				}
+   				if($("#istate_nro_chasis > img").hasClass("incorrecto")){
+   					$("[name=nro_chasis]").removeClass( "border border-success border-danger" ).addClass( "border border-danger");
+   				}
+   				
+   				if($("#istate_dominio > img").hasClass("correcto")){
+   					$("[name=dominio]").removeClass( "border border-success border-danger" ).addClass( "border border-success");
+   				}
+   				if($("#istate_dominio > img").hasClass("incorrecto")){
+   					$("[name=dominio]").removeClass( "border border-success border-danger" ).addClass( "border border-danger");
+   				}
+   			} 			
+   		 });
+       }
+    
+    	
+    });
+   
+    $("[name=nro_chasis],[name=dominio]").keydown(function(e){
+    	    if(e.keyCode == 13)
+    	    {
+    	    	$("#istate_dominio").empty();
+    	        $(this).trigger("enterKey");
+    	    }
+    	  
+     });
+    
+    $("[name=formulario]").on("submit",function(evt){
+    	evt.preventDefault();
+    	
+    	const inputDominio    = $("[name=dominio]");
+    	const inputChasis     = $("[name=nro_chasis]")
+    	const inputKilometros = $("[name=km]");
+    	const inputApellido   = $("[name=apellido]");
+    	const inputNombre     = $("[name=nombre]");
+    	const inputEmail      = $("[name=email]");
+    	const inputTelefono   = $("[name=telefono]");
+    	const inputReclamo    = $("[name=reclamo]");
+    	
+    	if(!inputChasis.prop("disabled") && 
+    	    inputChasis.val()!=="" && 
+    	    !($("#istate_nro_chasis > img").hasClass("correcto"))
+    	  ){
+			console.log("falla primera condicion");
+			inputChasis.focus();
+			evt.preventDefault();
+			return;
+		   }
+
+    	if(!inputDominio.prop("disabled") && 
+    	    inputDominio.val()!=="" && 
+    	    !($("#istate_dominio > img").hasClass("correcto"))
+    	   ){
+			console.log("falla segunda condicion");
+			inputDominio.focus();
+			evt.preventDefault();
+			return;
+		   }
+    	
+    	 
+        	
+    	if(inputNombre.val().length < 1){
+    			console.log("falla tercera condicion");
+    			inputNombre.focus();
+    			evt.preventDefault();
+    			return;
+    		   }
+        	
+    	
+    	
+    });
+   
+});

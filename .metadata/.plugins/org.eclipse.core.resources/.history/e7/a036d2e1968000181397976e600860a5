@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="xs">
+
+    <xs:element name="productos">
+        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="producto" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="producto">
+        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" minOccurs="1" maxOccurs="1" />
+                <xs:element name="nom" minOccurs="1" maxOccurs="1" />
+                <xs:element name="cant" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="id" type="Q1:integer" />
+
+    <xs:element name="nom" type="Q1:string" />
+
+    <xs:element name="cant" type="Q1:integer" />
+    
+</xs:schema>    

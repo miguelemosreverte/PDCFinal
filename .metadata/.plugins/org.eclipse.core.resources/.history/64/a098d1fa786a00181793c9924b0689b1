@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"  import="java.util.LinkedList,ar.edu.ubp.pdc.beans.VideoBean" %>
+    
+    <table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nom_categoria</th>
+			<th>Nro_categoria</th>
+			<th>Titulo</th>
+			<th>Link Video</th>
+			<th>Nro_video</th>
+		</tr>
+	</thead>
+	<tbody>	
+	<%
+	LinkedList<VideoBean> videos = (LinkedList<VideoBean>)request.getAttribute("videos");
+	for(VideoBean video: videos) {
+	%>
+	<tr>
+		<td><%= video.getNom_categoria() %></td>
+		<td><%= video.getNro_categoria() %></td>
+		<td><%= video.getTitulo() %></td>
+		<td><%= video.getCantante() %></td>
+		<td><%= video.getLink_video() %></td>
+		<td><%= video.getNro_video() %></td>
+	</tr>
+	<%		
+	}	
+	%>
+	</tbody>
+</table>
+    

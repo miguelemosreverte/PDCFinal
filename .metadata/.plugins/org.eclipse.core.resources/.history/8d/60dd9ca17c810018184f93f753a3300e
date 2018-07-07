@@ -1,0 +1,12 @@
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+	$("#idProvincias")
+
+});
+
+var jX = {
+		a: function() {
+			
+		},
+		
+}

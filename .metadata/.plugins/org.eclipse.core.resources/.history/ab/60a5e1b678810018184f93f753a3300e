@@ -1,0 +1,46 @@
+
+package ar.edu.ubp.pdc.tags;
+import java.beans.Statement;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+
+public class LocalidadesTagHandler extends SimpleTagSupport {
+
+	private String funcionJS;
+
+	public void setfuncionJS(String funcionJS) {
+		this.funcionJS = funcionJS;
+	}
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+		JspWriter out = this.getJspContext().getOut();
+		Connection conn;
+		Statement stmt;	
+		ResultSet result;
+		//LinkedList<CategoriaBean> categorias;
+		//CategoriaBean categoria;
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdcvideos", "sa", "98Thk7oo08L#F");
+			conn.setAutoCommit(true);
+			
+		   } 
+		    catch (ClassNotFoundException | SQLException e) {
+			out.println(e.getMessage());
+		   }
+	}
+  
+ }
+	
+

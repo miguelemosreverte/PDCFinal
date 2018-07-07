@@ -1,0 +1,96 @@
+
+package ar.edu.ubp.pdc.servlets;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import ar.edu.ubp.pdc.beans.VideoBean;
+
+/**
+ * Servlet implementation class TicketsServlet
+ */
+@WebServlet("/Videos")
+public class Videos extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Videos() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Connection conn;
+		PreparedStatement stmt;
+		ResultSet result;
+		LinkedList<VideoBean> videos;
+		VideoBean video;
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa", "98Thk7oo08L#F");
+			conn.setAutoCommit(true);
+			
+			stmt = conn.prepareStatement("select c.nom_categoria," + 
+					"       v.nro_categoria," + 
+					"       v.titulo," + 
+					"	   v.cantante," + 
+					"	   v.link_video," + 
+					"	   v.nro_video" + 
+					"  from dbo.videos v (nolock)" + 
+					"       join dbo.categorias_videos c (nolock)" + 
+					"	     on v.nro_categoria = c.nro_categoria" + 
+					" where ( ?  is null" + 
+					"    or  v.nro_categoria = ?)" + 
+					"   and  v.titulo + ' ' + v.cantante + ' ' + v.titulo like '%' + isnull(ltrim(rtrim(?)), '') + '%' " + 
+					" order by c.nom_categoria," + 
+					"          v.titulo;");
+
+			stmt.setInt(1, Integer.parseInt(request.getParameter("categoria")));
+			stmt.setString(2, request.getParameter("string_busqueda"));	
+			stmt.setString(3, request.getParameter("string_busqueda"));	
+	
+			result = stmt.executeQuery();
+			videos = new LinkedList<VideoBean>();
+			while(result.next()) {
+				video = new VideoBean();
+
+				video.setNom_categoria(result.getString("nom_categoria"));
+			    video.setNro_categoria(result.getInt("nro_categoria"));
+			    video.setTitulo(result.getString("titulo"));
+			    video.setCantante(result.getString("cantante"));
+				videos.add(video);
+			}
+			stmt.close();
+			conn.close();
+			
+			request.setAttribute("videos", videos);
+			gotoPage("/mostrar_videos.jsp", request, response);	
+		} 
+		catch (ClassNotFoundException | SQLException e) {
+			response.setStatus(400);
+			request.setAttribute("error", e.getMessage());
+			gotoPage("/error.jsp", request, response);
+		}		
+	}
+	
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(address);
+		rd.forward(request, response);
+	}
+
+}

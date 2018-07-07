@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class VideoBean {
+
+	public VideoBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,15 @@
+package ar.edu.ubp.pdc.beans;
+
+public class VideoBean {
+
+	private String nom_categoria;
+	private int nro_categoria;
+	private String titulo;
+	private String cantante;
+	private String link;
+	private String nro_video;
+	public VideoBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

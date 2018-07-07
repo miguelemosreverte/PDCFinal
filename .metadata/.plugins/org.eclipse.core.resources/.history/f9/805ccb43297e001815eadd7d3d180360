@@ -1,0 +1,108 @@
+package ar.edu.ubp.pdc.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import ar.edu.ubp.pdc.beans.RecursoBean;
+/**
+ * Servlet implementation class ServletIndex
+ */
+@WebServlet("/index.jsp")
+public class ServletIndex extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletIndex() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		/*response.getWriter().append("Served at: ").append(request.getContextPath());*/
+		response.setContentType("text/html;charset=iso-8859-1");
+		Connection conn;
+		Statement stmt;
+		ResultSet result;
+		LinkedList<RecursoBean> listado = new LinkedList<RecursoBean>();
+		RecursoBean rb;
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa", "98Thk7oo08L#F");
+			conn.setAutoCommit(true);
+			
+			stmt = conn.createStatement();
+			stmt.executeQuery("select desc_recurso     = desc_recurso," + 
+					"       cod_tipo_recurso = cod_tipo_recurso," + 
+					"	   tipo_propietario = case when nro_leg_personal is not null" + 
+					"	                           then 'P'" + 
+					"							   else 'A'" + 
+					"						  end," + 
+					"	   nro_leg_personal = nro_leg_personal," + 
+					"	   nro_area         = nro_area," + 
+					"	   vigente          = vigente," + 
+					"	   nro_recurso      = nro_recurso" + 
+					"  from dbo.recursos (nolock)" + 
+					" order by desc_recurso");
+		
+			result = stmt.getResultSet();
+			while(result.next()) {
+				rb= new RecursoBean();
+				rb.setDesc_recurso(result.getString("desc_recurso"));
+				rb.setCod_tipo_recurso(result.getString("cod_tipo_recurso"));
+				rb.setTipo_propietario(result.getString("tipo_propietario"));
+				rb.setNro_leg_peronal(result.getInt("nro_leg_peronal"));
+				rb.setNro_area(result.getInt("nro_area"));
+				rb.setVigente(result.getString("vigente"));
+				rb.setNro_recurso(result.getInt("nro_recurso"));
+				listado.add(rb);
+			}
+			
+			stmt.close();
+			conn.close();
+			
+			request.setAttribute("listado", listado);
+			this.gotoPage("/principal.jsp", request, response);
+		} 
+		catch (ClassNotFoundException | SQLException e) {
+			this.printError(e.getMessage(), request, response);
+		}
+	
+	}
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+	private void printError(String error, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("error", error);
+		this.gotoPage("/error.jsp", request, response);
+	}
+
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(address);
+		                  dispatcher.forward(request, response);
+	}
+	
+
+
+}

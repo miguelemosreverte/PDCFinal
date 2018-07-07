@@ -1,0 +1,12 @@
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+
+});
+
+var JHoteles = {
+		getLocalidades: function(e) {
+			console.log(this.value );
+			console.log("migueee");
+		},
+		
+}

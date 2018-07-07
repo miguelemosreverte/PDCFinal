@@ -1,0 +1,138 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+    
+    $("[name=radio_nro_chasis]").on("click change",() => {
+    	if( $("[name=radio_nro_chasis]:checked").val()==="S"){
+    		$("[name=nro_chasis]").prop('disabled', false);
+    		$("[name=dominio]").prop('disabled', false);
+    		$("[name=km]").prop('disabled', false);
+    		$("[name=aux]").show();
+    		}
+    	else if($("[name=radio_nro_chasis]:checked").val()==="N"){
+    		$("[name=nro_chasis]").prop('disabled', true);
+    		$("[name=dominio]").prop('disabled', true);
+    		$("[name=km]").prop('disabled', true);
+    		$("[name=aux]").hide();
+    		
+    	}
+    });
+    
+    $("[name=nro_chasis],[name=dominio]").on("blur",function(e){
+    	$("#istate_nro_chasis").empty();
+    	$("#istate_dominio").empty();
+    	if($("[name=nro_chasis]").val()!=="" && $("[name=dominio]").val()===""){
+    	 $("#istate_nro_chasis").html("Procesando...");
+    	 $.ajax({
+ 			url: "./ValidarChasis",
+ 			type: "post",
+ 			data: $("[name=nro_chasis]").serialize(), 
+ 			datatype: "html",
+ 			error: function(hr) {
+ 				$("#istate_nro_chasis").empty();
+ 				$("#istate_nro_chasis").html("Error..");
+ 				console.log(hr);
+ 			},
+ 			success: function(html){
+ 				$("#istate_nro_chasis").empty();
+ 				$("#istate_nro_chasis").html(html);
+ 			} 			
+ 		 });
+       }
+    	
+        if($("[name=nro_chasis]").val()!=="" && $("[name=dominio]").val()!=="")
+        {
+    	  $("#istate_nro_chasis").html("Procesando...");
+    	  $("#istate_dominio").html("Procesando...");
+      	  $.ajax({
+   			url: "./ValidarChasisYDominio",
+   			type: "post",
+   			data: $("[name=nro_chasis],[name=dominio]").serialize(), 
+   			datatype: "html",
+   			error: function(hr) {
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html("Error..");
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html("Error..");
+   				console.log(hr);
+   			},
+   			success: function(html){
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html(html);
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html(html);
+   			} 			
+   		 });
+       }
+   	
+    });
+  
+    
+    $("[name=registrar]").on("click",function(evt){
+    	evt.preventDefault();
+    	const inputDominio    = $("[name=dominio]");
+    	const inputChasis     = $("[name=nro_chasis]")
+    	const inputKilometros = $("[name=km]");
+    	const inputApellido   = $("[name=apellido]");
+    	const inputNombre     = $("[name=nombre]");
+    	const inputEmail      = $("[name=email]");
+    	const inputTelefono   = $("[name=telefono]");
+    	const inputReclamo    = $("[name=reclamo]");
+    	
+    	if(!inputChasis.prop("disabled") && inputChasis.val()==="" ){
+			console.log("falla primera condicion");
+			inputChasis.focus();
+			evt.preventDefault();
+			return;
+		   }    	 
+        	
+    	if(inputApellido.val().length < 1){
+    			console.log("falla tercera condicion");
+    			inputApellido.focus();
+    			evt.preventDefault();
+    			return;
+    		   }
+    	
+    	if(inputNombre.val().length < 1){
+			console.log("falla cuarta condicion");
+			inputNombre.focus();
+			evt.preventDefault();
+			return;
+		   }
+        	
+    	if(inputEmail.val().length < 1){
+			console.log("falla quinta condicion");
+			inputEmail.focus();
+			evt.preventDefault();
+			return;
+		   }
+    	
+    	if(inputReclamo.val().length < 4000 && inputReclamo.val().length === 0){
+			console.log("falla sexta condicion");
+			inputReclamo.focus();
+			evt.preventDefault();
+			return;
+		   }
+        
+    	$.ajax({
+   			url: "./InsertarReclamo",
+   			type: "post",
+   			data: $("[name=formulario]").serialize(), 
+   			datatype: "html",
+   			error: function(hr) {
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html("Error..");
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html("Error..");
+   				console.log(hr);
+   			},
+   			success: function(html){
+   				$("#istate_nro_chasis").empty();
+   				$("#istate_nro_chasis").html(html);
+   				$("#istate_dominio").empty();
+   				$("#istate_dominio").html(html);
+   			} 			
+    	
+    	 
+    });
+   
+});

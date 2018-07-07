@@ -1,0 +1,23 @@
+li{
+list-style-type:none;
+}
+
+.elemento-categoria {
+	 font-style: italic;
+	
+}
+.elemento-video > .cantante {
+    font-style: italic;
+}
+
+
+.elemento-video > .titulo {
+    color: red;
+    text-decoration: underline;
+}
+
+form{
+	
+	 border: 2px solid black;
+     border-radius: 4px;
+}

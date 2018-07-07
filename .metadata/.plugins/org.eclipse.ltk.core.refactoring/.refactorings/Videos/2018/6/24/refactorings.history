@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Videos/WebContent/mostrar_en_tabla.jsp&apos; to &apos;mostrar_agrupado.jsp&apos;" description="Rename resource &apos;mostrar_en_tabla.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/mostrar_en_tabla.jsp" name="mostrar_agrupado.jsp" stamp="1528646625893" updateReferences="true"/>
+</session>
