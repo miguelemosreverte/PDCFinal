@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"  import="java.util.LinkedList,ar.edu.ubp.pdc.beans.*" %>
+  
+  <%if(request.getAttribute("listadoFechas")!=null){
+    LinkedList <FechaHotelesBean> fechasHoteles = 
+    		(LinkedList <FechaHotelesBean>)request.getAttribute("listadoFechas");
+    LinkedList <String> hoteles = 
+        	 (LinkedList <String>)request.getAttribute("listadoHoteles");%>
+        	 
+ 	<div class="col-md-12">
+    <% for(String hotel:hoteles ){%>
+    
+ 		<div class="col-md-6">
+        <%= hotel %> ///////     	 
+       <% for(FechaHotelesBean fh:fechasHoteles ){%>
+          <%if(fh.getHotel().equals(hotel)){ %>
+             <%=fh.getFecha(); %>
+          <%}%>
+       <%}%> 
+   		</div> 	
+   	<%}%>
+   	</div>
+ 
+  <%}%>
+    
+  

@@ -1,0 +1,14 @@
+package ar.edu.ubp.pdc.beans;
+
+import ar.edu.ubp.pdc.beans.FechaHotelesBean;
+
+public class HotelBean {
+
+	private final String nombre;
+	private final List<FechaHotelesBean> fechasHabitaciones;
+	
+	public HotelBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

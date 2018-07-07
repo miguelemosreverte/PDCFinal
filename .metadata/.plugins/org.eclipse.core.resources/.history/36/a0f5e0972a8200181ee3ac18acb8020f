@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"  import="java.util.LinkedList,ar.edu.ubp.pdc.beans.*" %>
+  
+  <%if(request.getAttribute("listadoFechas")!=null){
+    LinkedList <FechaHotelesBean> fechasHoteles = 
+    		(LinkedList <FechaHotelesBean>)request.getAttribute("listadoFechas");
+    LinkedList <String> hoteles = 
+        	 (LinkedList <String>)request.getAttribute("listadoHoteles");%>
+        	 
+ 	<div class="col-md-12">
+    <% for(String hotel:hoteles ){%>
+    
+ 		<div class="col-md-6">
+        <%= hotel %>	 
+       <% for(FechaHotelesBean fh:fechasHoteles ){%>
+       
+       		<div class="row">
+ 				<div class="col-md-2">Fecha</div> 	
+ 				<div class="col-md-2">Tipo </div> 	
+ 				<div class="col-md-2">Hab.</div> 	
+ 				<div class="col-md-4">Cant.</div> 	
+ 				<div class="col-md-2"></div> 	
+	   		</div> 	
+	   		
+          <%if(fh.getHotel().equals(hotel)){ %>
+			<div class="row">
+ 				<div class="col-md-2">
+	             <%=fh.getFecha() %>
+	   			</div> 	
+ 				<div class="col-md-2">
+	             <%=fh.getTipo_habitacion() %>
+	   			</div> 	
+ 				<div class="col-md-2">
+	             <%=fh.getHab_disponibles() %>
+	   			</div> 	
+ 				<div class="col-md-4">
+	             	<input type="text"  name="cantidad_reservada" />
+	   			</div> 	
+ 				<div class="col-md-2">
+	             	<button type="text" name="cantidad_reservada"> Reservar </button>
+	   			</div> 	
+	   		</div> 	
+          <%}%>
+       <%}%> 
+   		</div> 	
+   	<%}%>
+   	</div>
+ 
+  <%}%>
+    
+  

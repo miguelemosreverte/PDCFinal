@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="JHoteles.Buscar()"/>
 			<item value="xs"/>
 			<item value="xslFile"/>
 			<item value=";"/>

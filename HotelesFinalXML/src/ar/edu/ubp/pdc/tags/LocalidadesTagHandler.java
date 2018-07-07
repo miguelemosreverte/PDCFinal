@@ -1,6 +1,5 @@
 
 package ar.edu.ubp.pdc.tags;
-import java.beans.Statement;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,8 +12,6 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 import ar.edu.ubp.pdc.beans.LocalidadBean;
-
-
 public class LocalidadesTagHandler extends SimpleTagSupport {
 
 	private String nombreElementoHTML;
@@ -32,9 +29,6 @@ public class LocalidadesTagHandler extends SimpleTagSupport {
 	public void setCodigoProvincia(String codigoProvincia) {
 		this.codigoProvincia = codigoProvincia;
 	}
-
-
-
 	@Override
 	public void doTag() throws JspException, IOException {
 		super.doTag();
@@ -44,15 +38,14 @@ public class LocalidadesTagHandler extends SimpleTagSupport {
 		ResultSet result;
 		LinkedList<LocalidadBean> localidades;
 		LocalidadBean localidad;
-		
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa", "98Thk7oo08L#F");
 			conn.setAutoCommit(true);
-			stmt = conn.prepareStatement("select nro_localidad, localidad" + 
-								"       from dbo.localidades (nolock)" + 
-								" 		where cod_provincia = ?" + 
-								" 		order by localidad" );
+			stmt = conn.prepareStatement( " select nro_localidad, localidad" + 
+								          " from dbo.localidades (nolock)" + 
+								 		  " where cod_provincia = ?" + 
+								 		  " order by localidad" );
 			stmt.setString(1, this.codigoProvincia);
 			result = stmt.executeQuery();
 			
@@ -74,15 +67,11 @@ public class LocalidadesTagHandler extends SimpleTagSupport {
 				}
 				out.println("</select>");
 				
-		   } 
-			
-
-			
-			
-		   } 
-		    catch (ClassNotFoundException | SQLException e) {
+		    } 
+		} 
+		catch (ClassNotFoundException | SQLException e) {
 			out.println(e.getMessage());
-		   }
+		}
 	}
   
  }

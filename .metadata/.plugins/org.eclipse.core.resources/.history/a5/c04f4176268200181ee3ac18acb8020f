@@ -1,0 +1,33 @@
+package ar.edu.ubp.pdc.beans;
+
+import java.util.LinkedList;
+
+public class FechaHotelesBean {
+	
+	
+	
+	class Habitacion {
+		
+	}
+
+	class Reservas {
+		private String fecha;
+		private Habitacion habitacion;
+	}
+	
+	private LinkedList<Habitacion> habitaciones= new LinkedList<>();
+	private Integer hab_disponibles;
+	private Integer nro_hotel;
+	private String  hotel;
+	private String desc_tipo_habitacion;
+	private String tipo_habitacion;
+	
+	public FechaHotelesBean() {
+		// TODO Auto-generated constructor stub
+	}
+	public void setHab_disponibles(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

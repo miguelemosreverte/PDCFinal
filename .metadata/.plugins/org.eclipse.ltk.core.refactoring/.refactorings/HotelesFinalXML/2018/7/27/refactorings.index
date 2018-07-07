@@ -1,3 +1,10 @@
 1530834306679	Delete element
 1530924911622	Rename resource 'index.jsp'
 1530924925507	Move 'getLocalidades.jsp' to 'WebContent'
+1530941708929	Delete element
+1530992582181	Rename type 'Hoteles'
+1530992726137	Delete element
+1530995336271	Delete element
+1530995343632	Delete element
+1530995357179	Rename type 'FechaHotelesBean'
+1530996115455	Rename type 'HotelBean'

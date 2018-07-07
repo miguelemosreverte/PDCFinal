@@ -15,55 +15,58 @@
  					<script type="text/javascript" src="./bootstrap.3.3.7/Scripts/bootstrap.min.js"></script>
  					<script type="text/javascript" src="./js/utils.js"></script>
  					<script type="text/javascript" src="./js/scripts.js"></script>
- 					<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+ 					<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
             	</head>
           		<body>
 					<div id="message"></div>
-	    			<div class="col-md-12" id="idContexto" >
-	    				<div class="row"><xsl:value-of select="$titulo"/></div>
-	    				<div class="row">
-	    					<div class="col-md-2" >Provincia: </div>
-	    					<div class="col-md-10" >
-	    					    <xsl:element name="select">
-	    					        <xsl:attribute name="id"> idProvincias </xsl:attribute>	
-	    					         <xsl:attribute name="name"> provincias </xsl:attribute>	
-	    					         <xsl:attribute name="onchange"> JHoteles.getLocalidades(this); </xsl:attribute>	     					       
-	    					   	    <xsl:element name="option"> 
-	    					    	    <xsl:attribute name="value"></xsl:attribute>
-	    					    	    <xsl:attribute name="selected">selected</xsl:attribute>
-	    					    		Debe seleccionar una provincia
-	    					    	</xsl:element> 
-									<xsl:for-each select="x:hoteles_config/x:provincias/x:provincia">
+					<form id="idForm" onsubmit="event.preventDefault(); JHoteles.buscar();">
+	    			<table class="table table-bordered">
+	    				<thead>
+	    				 <tr>
+      						<th colspan="6"> 
+    							<xsl:value-of select="$titulo"/>
+	    					</th>
+    					</tr>	
+	    				</thead>
+	    				 <tbody>
+	    				 	<tr>    
+	    				 		<td>Provincias:</td>
+	    				 		<td colspan="5">
+	    				 		
+										<select id="idProvincias" name="provincias" onchange="JHoteles.getLocalidades();">
+			    					        <xsl:element name="option"> 
+			    					     	    <xsl:attribute name="value"></xsl:attribute>
+			    					    	    <xsl:attribute name="selected">selected</xsl:attribute>
+			    					    		Debe seleccionar una provincia
+			    					        </xsl:element> 
+											<xsl:for-each select="x:hoteles_config/x:provincias/x:provincia">
+		                    					<xsl:element name="option"> 
+		                    						<xsl:attribute name="value"> 
+		                    							<xsl:value-of select="@codigo"/>  
+		                    						</xsl:attribute>
+		                    						<xsl:value-of select="."></xsl:value-of>
+		                    			        </xsl:element>
+		                    				</xsl:for-each>
+		                    			</select>
+
+	    				 		</td>
+	    				 	</tr>
+	    				 
+	    				 	<tr>
+	    				 	<td>Localidad:</td>
+	    				 	<td colspan="5"><div id="result-localidades"></div></td>
+	    				 	</tr>
+	    				 
+	    				 	<tr>
+	    				 	<td>Fecha Desde</td>
+	    				 	<td><input type="text" name="fecha-desde" ></input></td>
+	    				 	<td>Fecha Hasta</td>
+	    				 	<td><input type="text" name="fecha-hasta" ></input></td>	    				 	
+	    				 	<td>Tipo Habitacion</td>
+	    				 	<td>
+	    				 		<select name="tipos_habitaciones"> 
+								    <xsl:for-each select="x:hoteles_config/x:tipos_habitaciones/x:tipo">
                     					<xsl:element name="option"> 
-                    						<xsl:attribute name="value"> 
-                    							<xsl:value-of select="@codigo"/>  
-                    						</xsl:attribute>
-                    						<xsl:value-of select="."></xsl:value-of>
-                    					</xsl:element>
-                    				</xsl:for-each>
-                    			</xsl:element>
-                    			
-                    		</div>
-	    				</div>
-	    				<div class="row">
-	    					<div class="col-md-2" >Localidad:</div>
-	    					<div class="col-md-10" ><div id="result"> </div> </div>
-	    				</div>
-	    				<div class="row">
-	    					<div class="col-md-2" >Fecha Desde: </div>
-	    	    			<div class="col-md-2" ><input type="text" name="fecha-desde" ></input>
-	    	    				 <br></br> 
-	    	    				 <label>Ej: 16/05/2016</label></div>
-	    	   				<div class="col-md-2" >Fecha Hasta: </div>
-	    	    			<div class="col-md-2" ><input type="text" name="fecha-hasta" ></input>
-	    	    				<br></br> 
-	    	    				<label>Ej: 14/10/2016</label></div>
-	    	    			<div class="col-md-2" >Tipo de habitacion: </div>
-	    	    			<div class="col-md-2" >
-								<select name="tipos_habitaciones"> 
-								<xsl:for-each select="x:hoteles_config/x:tipos_habitaciones/x:tipo">
-                    					<xsl:element name="option"> 
-                    						
                     						<xsl:attribute name="value"> 
                     							<xsl:value-of select="@codigo"/>
                     						</xsl:attribute>
@@ -74,12 +77,18 @@
                     					</xsl:element>
                     				</xsl:for-each>	
                     			</select>
-							</div>
-	    				</div>
-	    				<div class="row">
-	    	    			<button class="btn btn-primary" onClick="JHoteles.buscar()"> Buscar </button>
-	    				</div>
-	    			</div>
+	    				 	</td>
+	    				 	</tr>
+	    				 	
+	    				 	<tr>
+		    				 	<td colspan="6">
+				    				<button> Buscar </button>
+		    				 	</td>
+	    				 	</tr>
+	    				 </tbody>
+	    			</table>
+	    			</form>
+	    			<div id="result-fecha-hoteles"></div>
 				</body>
         </html>  
     </xsl:template>

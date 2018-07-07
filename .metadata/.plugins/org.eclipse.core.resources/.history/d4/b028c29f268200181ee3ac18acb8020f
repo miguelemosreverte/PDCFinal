@@ -1,0 +1,19 @@
+package ar.edu.ubp.pdc.beans;
+
+import java.util.LinkedList;
+
+public class FechaHotelesBean {	
+
+	private String  hotel;
+	private String fecha;
+	private String desc_tipo_habitacion;
+	private String tipo_habitacion;
+	private Integer hab_disponibles;
+	private Integer nro_hotel;
+	
+	public FechaHotelesBean() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}

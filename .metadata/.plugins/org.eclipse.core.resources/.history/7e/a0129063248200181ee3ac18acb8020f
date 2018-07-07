@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class Habitacion {
+
+	public Habitacion() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

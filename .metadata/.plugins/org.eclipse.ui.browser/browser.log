@@ -120,3 +120,8 @@ Jul 05, 2018 21:01:00.58 (/usr/lib/firefox/firefox:14735): dconf-WARNING **: Una
 Jul 06, 2018 22:51:23.12 NEW SESSION
 Jul 06, 2018 22:51:23.12 
 Jul 06, 2018 22:51:23.17 (/usr/lib/firefox/firefox:10289): dconf-WARNING **: Unable to open /var/lib/menu-xdg/dconf/profile/user: Permission denied
+
+Jul 07, 2018 17:58:36.17 NEW SESSION
+Jul 07, 2018 17:58:36.17 
+Jul 07, 2018 17:58:36.20 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 07, 2018 17:58:36.20 

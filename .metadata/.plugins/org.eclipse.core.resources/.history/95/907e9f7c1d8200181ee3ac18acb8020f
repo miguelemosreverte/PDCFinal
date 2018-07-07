@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.beans;
+
+public class Hoteles {
+
+	public Hoteles() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
