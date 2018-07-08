@@ -1,0 +1,77 @@
+jQuery(document).ready(function() {
+	console.log("listo JQuery")
+	if($.trim($("[name=provincias]").val())!==""){
+		JHoteles.getLocalidades();
+	}
+});
+
+var JHoteles = {
+		getLocalidades: function() {
+            $("#result_localidades").html("<p>Procesando...</p>");
+			$.ajax({
+				url: "./getLocalidades.jsp",
+				type: "get",
+				data: $.param($("[name=provincias]")),  
+				/*{"codigoProvincia":$("[name=provincias]").val()},*/
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+					$("#result_localidades").empty();
+				},
+				success: function(html) {
+					$("#result_localidades").html(html);
+				}
+			});
+		},
+		guardarReserva: function(event) {
+			const thisButtonElement  = event.target;		
+			const myRow =  $(thisButtonElement).closest("tr");
+			const fecha =  myRow.find("[name=fecha]").text();
+			const tipo  =  myRow.find("[name=tipo_habitacion]").text();
+			const hab   =  myRow.find("[name=habitaciones_disponibles]");
+			const cant  =  myRow.find("[name=cantidad_reservada]");
+			console.log(fecha);
+			console.log(tipo);
+			console.log(hab);
+			console.log(cant);
+		},
+		buscar : function() {
+			if($("[name=provincias]").val()===""){
+				alert("Debe elegir una provincia :D");
+				return;
+			} 
+			if($.trim($("[name=localidades]").val())===""){
+				alert("Debe elegir una localidad :D");
+				return;
+			}
+			if($.trim($("[name=fecha_desde]").val())===""){
+				alert("Debe elegir una fecha-desde :D");
+				return;
+			}
+			if($("[name=fecha_hasta]").val()===""){
+				alert("Debe elegir una fecha-hasta :D");
+				return;
+			}
+			if($("[name=tipos_habitaciones]").val()===""){
+				alert("Debe elegir un tipos de habitación :D");
+				return;
+			}
+			
+			$("#result_fecha_hoteles").html("<p>Procesando...</p>");
+			$.ajax({
+				url:  "./getFechasHoteles.jsp",
+				type: "get",
+				data: $("#idForm").serialize(),
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+					$("#result_fecha_hoteles").empty();
+				},
+				success: function(html) {
+					$("#result_fecha_hoteles").html(html);
+				}
+			});
+
+		 
+		}
+}

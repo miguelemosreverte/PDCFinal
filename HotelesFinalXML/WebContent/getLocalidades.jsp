@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/WEB-INF/tld/customs.tld" prefix="ct" %>
 <!DOCTYPE html >
 

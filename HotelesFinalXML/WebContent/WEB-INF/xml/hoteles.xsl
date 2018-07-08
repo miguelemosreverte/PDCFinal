@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0" 
           		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:x="http://www.w3schools.com" >
+
 <xsl:output method="html"/>
 <xsl:param  name="titulo" />
 <xsl:template match="/">
@@ -20,7 +21,7 @@
           		<body>
 					<div id="message"></div>
 					<form id="idForm" onsubmit="event.preventDefault(); JHoteles.buscar();">
-	    			<table class="table table-bordered">
+	    			<table class="table table-bordered" name="tablaContexto">
 	    				<thead>
 	    				 <tr>
       						<th colspan="6"> 
@@ -32,7 +33,6 @@
 	    				 	<tr>    
 	    				 		<td>Provincias:</td>
 	    				 		<td colspan="5">
-	    				 		
 										<select id="idProvincias" name="provincias" onchange="JHoteles.getLocalidades();">
 			    					        <xsl:element name="option"> 
 			    					     	    <xsl:attribute name="value"></xsl:attribute>
@@ -54,17 +54,23 @@
 	    				 
 	    				 	<tr>
 	    				 	<td>Localidad:</td>
-	    				 	<td colspan="5"><div id="result-localidades"></div></td>
+	    				 	<td colspan="5"><div id="result_localidades"></div></td>
 	    				 	</tr>
 	    				 
 	    				 	<tr>
 	    				 	<td>Fecha Desde</td>
-	    				 	<td><input type="text" name="fecha-desde" ></input></td>
+	    				 	<td><input type="text" name="fecha_desde" />
+	    				 	    <label>Ej: 16/05/2016</label>
+	    				 	</td>
 	    				 	<td>Fecha Hasta</td>
-	    				 	<td><input type="text" name="fecha-hasta" ></input></td>	    				 	
+	    				 	<td><input type="text" name="fecha_hasta"/>
+	    				 	    <label>Ej: 14/10/2019</label>
+	    				 	</td>	    				 	
 	    				 	<td>Tipo Habitacion</td>
 	    				 	<td>
-	    				 		<select name="tipos_habitaciones"> 
+	    			
+	    				 		<xsl:element name="select">
+	    				 			<xsl:attribute name="name">tipos_habitaciones</xsl:attribute>
 								    <xsl:for-each select="x:hoteles_config/x:tipos_habitaciones/x:tipo">
                     					<xsl:element name="option"> 
                     						<xsl:attribute name="value"> 
@@ -76,7 +82,7 @@
                     						<xsl:value-of select="."></xsl:value-of>
                     					</xsl:element>
                     				</xsl:for-each>	
-                    			</select>
+                    			</xsl:element>
 	    				 	</td>
 	    				 	</tr>
 	    				 	
@@ -88,7 +94,7 @@
 	    				 </tbody>
 	    			</table>
 	    			</form>
-	    			<div id="result-fecha-hoteles"></div>
+	    			<div id="result_fecha_hoteles"></div>
 				</body>
         </html>  
     </xsl:template>

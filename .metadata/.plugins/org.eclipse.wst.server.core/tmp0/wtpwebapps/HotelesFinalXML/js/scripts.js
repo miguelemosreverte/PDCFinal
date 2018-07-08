@@ -3,25 +3,72 @@ jQuery(document).ready(function() {
 	if($.trim($("[name=provincias]").val())!==""){
 		JHoteles.getLocalidades();
 	}
+	
+	$("[name=tablaContexto]").on("change","[name=tipos_habitaciones]",function(){
+		console.log("algo");
+	});
+	
 });
 
+const yourStandardMarielaAjaxCall = (parameters) => {
+	$(parameters.id).html("<p>Procesando...</p>");
+	$.ajax({
+		url: parameters.url,
+		type: "get",
+		data: parameters.data,  
+		dataType: "html",
+		error: function(hr) {
+			$("#message").html(hr.responseText);
+			$(parameters.id).empty();
+		},
+		success: function(html) {
+			$(parameters.id).html(html);
+		}
+	});
+}
 var JHoteles = {
 		getLocalidades: function() {
-            $("#result-localidades").html("<p>Procesando...</p>");
+			yourStandardMarielaAjaxCall({
+					  id : "#result_localidades"
+					, data : $.param($("[name=provincias]"))
+					, url : "./getLocalidades.jsp"
+					});
+		},
+		guardarReserva: function(event) {
+			const thisButtonElement  = event.target;		
+			const myRow =  $(thisButtonElement).closest("tr");	
+			
+			const fecha =  myRow.find("[name=fecha]").text().trim();
+			const tipo  =  myRow.find("[name=tipo_habitacion]").text().trim();
+			const hab   =  myRow.find("[name=habitaciones_disponibles]").text().trim();
+			const cant  =  myRow.find("[name=cantidad_reservada]").val().trim();
+			
+
+			const myTableContainer =  $(thisButtonElement).closest("[name=HotelNameContainer]");	
+			const hotelName = myTableContainer.find("[name=HotelName]").text();
+			
+			const serialized = {fecha, tipo, hab, cant, hotelName}
+			
+			const cantidadEsValida = Number.isInteger(Number(cant)) && cant > 0
+			if (!cantidadEsValida){
+				alert("La cantidad no es válida " + cant);
+				return;
+			}
+			
 			$.ajax({
-				url: "./getLocalidades.jsp",
-				type: "get",
-				data: $.param($("[name=provincias]")),  
-				/*{"codigoProvincia":$("[name=provincias]").val()},*/
+				url: "./reservar.jsp",
+				type: "post",
+				data: serialized,  
 				dataType: "html",
 				error: function(hr) {
 					$("#message").html(hr.responseText);
-					$("#result-localidades").empty();
 				},
 				success: function(html) {
-					$("#result-localidades").html(html);
+					window.reload()
 				}
 			});
+			
+			
 		},
 		buscar : function() {
 			if($("[name=provincias]").val()===""){
@@ -32,33 +79,24 @@ var JHoteles = {
 				alert("Debe elegir una localidad :D");
 				return;
 			}
-			if($.trim($("[name=fecha-desde]").val())===""){
+			if($.trim($("[name=fecha_desde]").val())===""){
 				alert("Debe elegir una fecha-desde :D");
 				return;
 			}
-			if($("[name=fecha-hasta]").val()===""){
+			if($("[name=fecha_hasta]").val()===""){
 				alert("Debe elegir una fecha-hasta :D");
 				return;
 			}
-			if($("[name=tipos-habitaciones]").val()===""){
+			if($("[name=tipos_habitaciones]").val()===""){
 				alert("Debe elegir un tipos de habitación :D");
 				return;
 			}
 			
-			$("#result-fecha-hoteles").html("<p>Procesando...</p>");
-			$.ajax({
-				url:  "./getFechasHoteles.jsp",
-				type: "get",
-				data: $("#idForm").serialize(),
-				dataType: "html",
-				error: function(hr) {
-					$("#message").html(hr.responseText);
-					$("#result-fecha-hoteles").empty();
-				},
-				success: function(html) {
-					$("#result-fecha-hoteles").html(html);
-				}
-			});
+			yourStandardMarielaAjaxCall({
+				  id : "#result_fecha_hoteles"
+				, data : $("#idForm").serialize()
+				, url : "./getFechasHoteles.jsp"
+				});	
 
 		 
 		}

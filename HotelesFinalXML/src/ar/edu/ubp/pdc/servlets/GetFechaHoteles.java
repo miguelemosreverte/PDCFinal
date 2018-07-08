@@ -50,8 +50,8 @@ public class GetFechaHoteles extends HttpServlet {
 		    LinkedList<String> listaHoteles;
 			try {
 				Integer nroLocalidad = Integer.parseInt(request.getParameter("localidades"));
-				String fechaDesdeFormateada = formatter.format(parser.parse(request.getParameter("fecha-desde")));
-				String fechaHastaFormateada = formatter.format(parser.parse(request.getParameter("fecha-hasta")));
+				String fechaDesdeFormateada = formatter.format(parser.parse(request.getParameter("fecha_desde")));
+				String fechaHastaFormateada = formatter.format(parser.parse(request.getParameter("fecha_hasta")));
 				String tipoHabitacion = request.getParameter("tipos_habitaciones");
 				
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
