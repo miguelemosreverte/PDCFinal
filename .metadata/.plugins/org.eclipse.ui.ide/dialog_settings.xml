@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/linux1/eclipse-workspace/Servlets-Cookies-Sessions"/>
 		<item value="/home/linux1/eclipse-workspace/XSLT"/>
 		<item value="/home/linux1/eclipse-workspace/XML"/>
 		<item value="/home/linux1/eclipse-workspace"/>

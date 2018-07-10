@@ -19,6 +19,8 @@ INDEX VERSION 1.130
 /Test/src
 /home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/928936566.index
 /XPath/src
+/home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2634323444.index
+/XML1-Grupos/src
 /home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/428315641.index
 /SistemaDeTickets/src
 /home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1702741838.index
@@ -45,5 +47,7 @@ INDEX VERSION 1.130
 /Test/src
 /home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4192218212.index
 /Tickets/src
+/home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3439005598.index
+/XML1-Grupos/src
 /home/linux1/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1826871002.index
 /Form-AJAX/src

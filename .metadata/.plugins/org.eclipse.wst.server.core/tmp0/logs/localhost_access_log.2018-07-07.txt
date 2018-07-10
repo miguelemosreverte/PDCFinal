@@ -1901,3 +1901,15 @@
 127.0.0.1 - - [07/Jul/2018:21:00:05 -0300] "GET /HotelesFinalXML/bootstrap.3.3.7/content/bootstrap.min.css.map HTTP/1.1" 304 -
 127.0.0.1 - - [07/Jul/2018:21:00:08 -0300] "GET /HotelesFinalXML/getFechasHoteles.jsp?provincias=X&localidades=408&fecha_desde=16%2F05%2F2016&fecha_hasta=16%2F05%2F2019&tipos_habitaciones=D HTTP/1.1" 200 12054
 127.0.0.1 - - [07/Jul/2018:21:00:09 -0300] "POST /HotelesFinalXML/reservar.jsp HTTP/1.1" 404 1106
+127.0.0.1 - - [07/Jul/2018:21:30:49 -0300] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [07/Jul/2018:21:30:50 -0300] "GET /HotelesFinalXML/ HTTP/1.1" 200 2694
+127.0.0.1 - - [07/Jul/2018:21:30:50 -0300] "GET /HotelesFinalXML/bootstrap.3.3.7/content/bootstrap.min.css HTTP/1.1" 200 121200
+127.0.0.1 - - [07/Jul/2018:21:30:50 -0300] "GET /HotelesFinalXML/css/styles.css HTTP/1.1" 200 369
+127.0.0.1 - - [07/Jul/2018:21:30:50 -0300] "GET /HotelesFinalXML/js/scripts.js HTTP/1.1" 200 2759
+127.0.0.1 - - [07/Jul/2018:21:30:50 -0300] "GET /HotelesFinalXML/bootstrap.3.3.7/content/bootstrap-theme.min.css HTTP/1.1" 500 8192
+127.0.0.1 - - [07/Jul/2018:21:30:53 -0300] "GET /HotelesFinalXML/getLocalidades.jsp?provincias=B HTTP/1.1" 200 869
+127.0.0.1 - - [07/Jul/2018:21:31:02 -0300] "GET /HotelesFinalXML/getFechasHoteles.jsp?provincias=B&localidades=23&fecha_desde=16%2F05%2F2016&fecha_hasta=14%2F10%2F2019&tipos_habitaciones=D HTTP/1.1" 200 11549
+127.0.0.1 - - [07/Jul/2018:21:31:13 -0300] "GET /HotelesFinalXML/css/styles.css HTTP/1.1" 200 369
+127.0.0.1 - - [07/Jul/2018:21:31:13 -0300] "GET /HotelesFinalXML/bootstrap.3.3.7/content/bootstrap.min.css.map HTTP/1.1" 304 -
+127.0.0.1 - - [07/Jul/2018:21:31:20 -0300] "POST /HotelesFinalXML/reservar.jsp HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2018:22:22:21 -0300] "GET /HotelesFinalXML/getLocalidades.jsp?provincias=P HTTP/1.1" 200 978

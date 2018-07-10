@@ -2,7 +2,7 @@ package ar.edu.ubp.pdc.beans;
 
 public class FechaHotelesBean {	
 
-	private String  hotel;
+	
 	public String getHotel() {
 		return hotel;
 	}
@@ -50,7 +50,8 @@ public class FechaHotelesBean {
 	public void setNro_hotel(Integer nro_hotel) {
 		this.nro_hotel = nro_hotel;
 	}
-
+	
+	private String  hotel;
 	private String fecha;
 	private String desc_tipo_habitacion;
 	private String tipo_habitacion;

@@ -4,8 +4,9 @@ jQuery(document).ready(function() {
 		JHoteles.getLocalidades();
 	}
 	
-	$("[name=tablaContexto]").on("change","[name=tipos_habitaciones]",function(){
-		console.log("algo");
+	
+	$("[name=tablaContexto]").on("change","[name=provincias]",function(){
+		JHoteles.getLocalidades();
 	});
 	
 });
@@ -39,19 +40,20 @@ var JHoteles = {
 			const myRow =  $(thisButtonElement).closest("tr");	
 			
 			const fecha =  myRow.find("[name=fecha]").text().trim();
-			const tipo  =  myRow.find("[name=tipo_habitacion]").text().trim();
-			const hab   =  myRow.find("[name=habitaciones_disponibles]").text().trim();
-			const cant  =  myRow.find("[name=cantidad_reservada]").val().trim();
+			const tipo_habitacion  =  myRow.find("[name=tipo_habitacion]").text().trim();
+			const habitaciones_disponibles   =  myRow.find("[name=habitaciones_disponibles]").text().trim();
+			const cantidad  =  myRow.find("[name=cantidad_reservada]").val().trim();
+			const nro_hotel = myRow.find("[name=nro_hotel]").val().trim();
 			
 
-			const myTableContainer =  $(thisButtonElement).closest("[name=HotelNameContainer]");	
-			const hotelName = myTableContainer.find("[name=HotelName]").text();
+			//const myTableContainer =  $(thisButtonElement).closest("[name=HotelNameContainer]");	
+			//const hotelName = myTableContainer.find("[name=HotelName]").text();
 			
-			const serialized = {fecha, tipo, hab, cant, hotelName}
+			const serialized = {nro_hotel, fecha, tipo_habitacion, habitaciones_disponibles, cantidad}
 			
-			const cantidadEsValida = Number.isInteger(Number(cant)) && cant > 0
+			const cantidadEsValida = Number.isInteger(Number(cantidad)) && cantidad > 0
 			if (!cantidadEsValida){
-				alert("La cantidad no es válida " + cant);
+				alert("La cantidad no es válida " + cantidad);
 				return;
 			}
 			
@@ -64,9 +66,12 @@ var JHoteles = {
 					$("#message").html(hr.responseText);
 				},
 				success: function(html) {
-					window.reload()
+					alert(html)
+					$("#result_fecha_hoteles").html(html);
 				}
 			});
+			
+			
 			
 			
 		},
@@ -97,7 +102,7 @@ var JHoteles = {
 				, data : $("#idForm").serialize()
 				, url : "./getFechasHoteles.jsp"
 				});	
-
+			alert($("#idForm").serialize());
 		 
 		}
 }

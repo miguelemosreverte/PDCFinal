@@ -5,6 +5,7 @@
 
 <xsl:output method="html"/>
 <xsl:param  name="titulo" />
+<xsl:param  name="reservas" />
 <xsl:template match="/">
         <html>
             	<head>
@@ -19,6 +20,8 @@
  					<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
             	</head>
           		<body>
+          			<script>console.log(<xsl:value-of select="$reservas"/>)</script>
+          			<h1><xsl:value-of select="$reservas"/></h1>
 					<div id="message"></div>
 					<form id="idForm" onsubmit="event.preventDefault(); JHoteles.buscar();">
 	    			<table class="table table-bordered" name="tablaContexto">
@@ -33,7 +36,9 @@
 	    				 	<tr>    
 	    				 		<td>Provincias:</td>
 	    				 		<td colspan="5">
-										<select id="idProvincias" name="provincias" onchange="JHoteles.getLocalidades();">
+		    				 		<xsl:element name="select">
+		    				 			<xsl:attribute name="name">provincias</xsl:attribute>
+										<!-- <select id="idProvincias" name="provincias" onchange="JHoteles.getLocalidades();">  -->
 			    					        <xsl:element name="option"> 
 			    					     	    <xsl:attribute name="value"></xsl:attribute>
 			    					    	    <xsl:attribute name="selected">selected</xsl:attribute>
@@ -47,7 +52,8 @@
 		                    						<xsl:value-of select="."></xsl:value-of>
 		                    			        </xsl:element>
 		                    				</xsl:for-each>
-		                    			</select>
+		                    			<!-- </select> -->
+		                    			</xsl:element>
 
 	    				 		</td>
 	    				 	</tr>
@@ -88,6 +94,12 @@
 	    				 	
 	    				 	<tr>
 		    				 	<td colspan="6">
+		    				 		<xsl:element name="input" >
+		    				 			<xsl:attribute name="name" >reservas</xsl:attribute>
+		    				 			<xsl:attribute name="value" >
+		    				 				<xsl:value-of select="$reservas"/>
+		    				 			</xsl:attribute>
+		    				 		</xsl:element>
 				    				<button> Buscar </button>
 		    				 	</td>
 	    				 	</tr>

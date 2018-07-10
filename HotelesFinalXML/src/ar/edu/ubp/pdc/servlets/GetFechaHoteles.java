@@ -74,6 +74,7 @@ public class GetFechaHoteles extends HttpServlet {
 					fh.setHab_disponibles(result.getInt("hab_disponibles"));
 					fh.setHotel(result.getString("hotel"));
 					fh.setTipo_habitacion(result.getString("tipo_habitacion"));
+					fh.setNro_hotel(result.getInt("nro_hotel"));
 					listaFechas.add(fh);
 					if(!listaHoteles.contains(fh.getHotel())){
 						listaHoteles.add(fh.getHotel());
@@ -83,6 +84,7 @@ public class GetFechaHoteles extends HttpServlet {
 				conn.close();
 				request.setAttribute("listadoFechas", listaFechas);
 				request.setAttribute("listadoHoteles", listaHoteles);
+				request.setAttribute("reservas", request.getParameter("reservas"));
 				this.gotoPage("/mostrar_hoteles.jsp", request, response);
 			} 
 			catch (ClassNotFoundException | SQLException | ParseException e) {

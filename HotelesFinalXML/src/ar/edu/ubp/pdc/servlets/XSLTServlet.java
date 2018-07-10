@@ -1,6 +1,7 @@
 package ar.edu.ubp.pdc.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,18 +46,13 @@ public class XSLTServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=ISO-8859-1");
         PrintWriter out = response.getWriter();
-        try {
-	        /*
-	         *  Si queremos validar nuestro XML utilizando un SCHEMA Externo especificamos:
-	         *  factory.setValidating(false);
-	         *  SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
-	         *  factory.setSchema(schemaFactory.newSchema(new Source[] {new StreamSource(xsdFile)}));
-	         * 
-	         *  Si queremos validar nuestro XML utilizando un SCHEMA Interno especificamos:
-	         *  factory.setValidating(true);
-	         *  factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
-	         *  NOTA: En nuestro caso no sirve validarlo utilizando este SCHEMA ya que el XML tiene una estructura espec�fica
-	         */
+
+        		
+      try {
+          String reservas = request.getSession().getAttribute("reservas") != null ?
+          		request.getSession().getAttribute("reservas").toString()
+          		: "";
+
 	        String path    = this.getServletContext().getRealPath("/WEB-INF/xml/") + System.getProperty("file.separator");
 	        String xsdFile = path + "hoteles.xsd";
 	        String xmlFile = path + "hoteles.xml";
@@ -94,7 +90,8 @@ public class XSLTServlet extends HttpServlet {
 	        
 	        TransformerFactory tFactory = TransformerFactory.newInstance();
 		    Transformer transformer = tFactory.newTransformer(new StreamSource(xslFile));
-                        transformer.setParameter("titulo", "Busqueda Hoteles");
+			            transformer.setParameter("titulo", "Busqueda Hoteles");
+			            transformer.setParameter("reservas", reservas);
  		                transformer.transform(new DOMSource(doc), result);
         }
 		catch (TransformerException | SAXException | ParserConfigurationException ex) {
@@ -105,6 +102,7 @@ public class XSLTServlet extends HttpServlet {
         }
 	}
 
+	
     private void printMessage(PrintWriter out, String message) throws IOException {
         out.println("<!DOCTYPE html>");
         out.println("<html>");
