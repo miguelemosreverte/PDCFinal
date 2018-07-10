@@ -17,7 +17,7 @@
 <div id="main_container">
 	<div id="message"> </div>
 	<form name="name_form" id="id_form">
-		<ct:tag tipo="lista" nombre_del_elemento_html="elem_tag"/>
+		<ct:tag tipo="radio" nombre_del_elemento_html="elem_tag"/>
 		<div id="result"> </div>	
 	</form>
 </div>

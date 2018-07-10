@@ -15,8 +15,8 @@
              <td>
    			   <input type="checkbox" name="vigente" value="" >
              </td>
-             <td> <button  name="boton_cancelar" type="button">Cancelar</button> </td>
-             <td> <button  name="boton_guardar" type="button">Guardar</button> </td>
+             <td> <button  name="boton_cancelar"  class="btn btn-primary">Cancelar</button> </td>
+             <td> <button  name="boton_guardar"   class="btn btn-danger">Guardar</button> </td>
             
   		</tr>
 
