@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="cant" key="selection"/>
+		<item value="reclamo" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="reclamo"/>
+			<item value="&apos;?&apos;"/>
+			<item value="\n"/>
 			<item value="GrupoRegistradoBean"/>
 			<item value="generatePrimaryKey"/>
 			<item value="cant"/>
@@ -20,11 +23,10 @@
 			<item value="&apos;.&apos;"/>
 			<item value="..|"/>
 			<item value=".."/>
-			<item value="Vi"/>
-			<item value="vid"/>
-			<item value="v"/>
 		</list>
 		<list key="replacehistory">
+			<item value="?"/>
+			<item value=""/>
 			<item value="xsd"/>
 		</list>
 	</section>
@@ -32,7 +34,7 @@
 		<item value="342" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="436" key="DIALOG_HEIGHT"/>
-		<item value="1018" key="DIALOG_X_ORIGIN"/>
-		<item value="109" key="DIALOG_Y_ORIGIN"/>
+		<item value="887" key="DIALOG_X_ORIGIN"/>
+		<item value="85" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

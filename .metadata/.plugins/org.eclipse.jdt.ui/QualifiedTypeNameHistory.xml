@@ -15,9 +15,7 @@
 <fullyQualifiedTypeName name="ar.edu.ubp.pdc.beans.GrupoBean"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-<fullyQualifiedTypeName name="java.sql.CallableStatement"/>
 <fullyQualifiedTypeName name="java.beans.Statement"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="ar.edu.ubp.pdc.beans.LocalidadBean"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -33,5 +31,12 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="ar.edu.ubp.pdc.beans.AreaBean"/>
 <fullyQualifiedTypeName name="ar.edu.ubp.pdc.beans.GrupoRegistradoBean"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="javax.servlet.Registration"/>
+<fullyQualifiedTypeName name="ar.edu.ubp.pdc.classes.RegistrarDB"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="java.sql.CallableStatement"/>
+<fullyQualifiedTypeName name="java.sql.SQLType"/>
 <fullyQualifiedTypeName name="java.sql.Types"/>
+<fullyQualifiedTypeName name="ar.edu.ubp.pdc.classes.ValidarNroChasisDB"/>
 </qualifiedTypeNameHistroy>

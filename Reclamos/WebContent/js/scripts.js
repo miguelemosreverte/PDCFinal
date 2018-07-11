@@ -1,113 +1,120 @@
 jQuery(document).ready(function() {
 console.log("listo JQuery")
 
+ $("[name=conoce_chasis]").on("change",function(evt){
+	 const chk =  evt.target;
+	 const val  = $(chk).val();
+	 //console.log(val);
+	 if(val==="S"){
+		   $("#container_chasis").show();
+		   $("#container_patente").show();
+		   $("#container_kilometros").show();
+		   $("[name=nro_chasis]").prop("disabled",false);
+		   $("[name=nro_patente]").prop("disabled",false);
+		   $("[name=kilometros]").prop("disabled",false);
+	 }
+	 else{
+		   $("#container_chasis").hide();
+		   $("#container_patente").hide();
+		   $("#container_kilometros").hide();
+		   $("[name=nro_chasis]").prop("disabled",true);
+		   $("[name=nro_patente]").prop("disabled",true);
+		   $("[name=kilometros]").prop("disabled",true);
+	 }
+	 
+	 
+	 
+ });
 
-$("[name=conoces]").on("click change",function(){ 
-
-	if($("[name=conoces]:checked").val()=="N"){
+$("[name=nro_chasis]").on("keyup",function(event){ 
+	
+	if (event.keyCode === 13) {
+        $("#nro_chasis_validacion").html("<p>Procesando...</p>");
+        const serialized = {nro_chasis : $("[name=nro_chasis]").val()}
+        
+		$.ajax({
+			url: "./validar_nro_chasis.jsp",
+			type: "post",
+			data: serialized,
+			dataType: "html",
+			error: function(hr) {
+				$("#message").html(hr.responseText);
+				$("#nro_chasis_validacion").empty();
+				$("#nro_patente_validacion").empty();
+			},
+			success: function(html) {
+				$("#nro_chasis_validacion").html(html)
+				$("#nro_patente_validacion").html(html)
+			}
+		})   
 		
-		$("[name=chasis]").attr("disabled",true);
-		$("[name=rowdelchasis]").hide();
-		$("[name=petente]").attr("disabled",true);
-		$("[name=rowdelapatente]").hide();
-		$("[name=km]").attr("disabled",true);
-		$("[name=rowdelkm]").hide();
-	}else{
-		$("[name=chasis]").attr("disabled",false);
-		$("[name=rowdelchasis]").show();
-		$("[name=petente]").attr("disabled",false);
-		$("[name=rowdelapatente]").show();
-		$("[name=km]").attr("disabled",false);
-		$("[name=rowdelkm]").show();
 	}
-
 });
 
-	$("[name=chasis]").on("keydown",function(event){ 
-		
-		if (event.keyCode === 13) {
-            $("#resultchasis").html("<p>Procesando...</p>");
-			$.ajax({
-				url: "./Validar.jsp",
-				type: "get",
-				data: {
-					chasis : $("[name=chasis]").val(),
-				},
-				dataType: "html",
-				error: function(hr) {
-					$("#message").html(hr.responseText);
-					$("#resultchasis").empty();
-					$("#resultpatente").empty();
-				},
-				success: function(html) {
-					$("#resultchasis").html(html);
-				}
-			})   
-			
-		}
+$("[name=nro_patente]").on("keyup",function(event){ 
 	
-
-	});
-	
-	$("[name=patente]").on("keydown",function(event){ 
+	if (event.keyCode === 13) {
 		
-		if (event.keyCode === 13) {
-            $("#resultpatente").html("<p>Procesando...</p>");
-            $("#resultchasis").html("<p>Procesando...</p>");
-			$.ajax({
-				url: "./Validar.jsp",
-				type: "get",
-				data: {
-					chasis :     $("[name=chasis]").val(),
-					patente:     $("[name=patente]").val(),
-				},
-				dataType: "html",
-				error: function(hr) {
-					$("#message").html(hr.responseText);
-					$("#resultpatente").empty();
-					$("#resultchasis").empty();
-				},
-				success: function(html) {
-					$("#resultpatente").empty();
-					$("#resultchasis").empty();
-					$("#resultpatente").html(html);
-					$("#resultchasis").html(html);
-				}
-			})   
-			
-		}
-
-	});
-
-
+        $("#nro_chasis_validacion").html("<p>Procesando...</p>");
+        $("#nro_patente_validacion").html("<p>Procesando...</p>");
+        
+        const serialized = {
+				        		nro_chasis : $("[name=nro_chasis]").val(),
+				        		nro_patente : $("[name=nro_patente]").val(),
+			        		}
+        
+		$.ajax({
+			url: "./validar_nro_chasis_y_patente.jsp",
+			type: "post",
+			data: serialized,
+			dataType: "html",
+			error: function(hr) {
+				$("#message").html(hr.responseText);
+				$("#nro_chasis_validacion").empty();
+				$("#nro_patente_validacion").empty();
+			},
+			success: function(html) {
+				$("#nro_chasis_validacion").html(html)
+				$("#nro_patente_validacion").html(html)
+			}
+		})   
+		
+	}
 });
 
-var JReclamos= {
-		registrar: function(event) { 
-			event.preventDefault();
-			console.log("clickeado");
+  $("#boton_registrar").on("click",function(evt){
+	  evt.preventDefault()
+	  const serialize= $("#reclamosForm").serialize();
+	  console.log(serialize)
+	  
+	  if ($("[name=reclamo]").val().trim() === "") return;
+	  
+	  $.ajax({
+			url: "./registrar.jsp",
+			type: "post",
+			data: serialize,  
+			dataType: "html",
+			error: function(hr) {
+				$("#message").html(hr.responseText);
+			},
+			success: function(html) {
+				JReclamos.aftermath(html)
+			}
+		});
+  });
+});
 
-			$.ajax({
-				url: "./Registrar.jsp",
-				type: "post",
-				data: $("#form").serialize(),
-				dataType: "html",
-				error: function(hr) {
-					$("#message").html(hr.responseText);
-					
-				},
-				success: function(html) {
-					jUtils.hiding("main",false);
-					$("#finalizar").html(html);
-					jUtils.showing("finalizar");
-				}
-			
-		    });
-		 
-      },
-      volver: function() {
-			jUtils.hiding("finalizar");
-			jUtils.showing("main");
-			window.location.reload();
+var JReclamos = {
+
+		aftermath : (html) => {
+			$("#main").hide()
+			$("#aftermath").html(html)
+		},
+		backToHome : () => {
+			$("#reclamosForm")["0"].reset()
+			$("#main").show()
+			$("#aftermath").html("")
 		}
+		//realizarReclamo = (evt) => {}
+		
 }

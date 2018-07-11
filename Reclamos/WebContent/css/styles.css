@@ -1,0 +1,19 @@
+
+body {
+	
+	margin: 15px;
+	padding: 10px;
+}
+
+
+.title {	
+	color: red;
+}
+
+textarea {
+	width:100%;
+}
+
+.row {
+	margin-top:10px
+}

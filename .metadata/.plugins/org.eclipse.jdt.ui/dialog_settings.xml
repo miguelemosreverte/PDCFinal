@@ -112,8 +112,8 @@
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="223" key="size.y"/>
-		<item value="353" key="size.x"/>
+		<item value="212" key="size.y"/>
+		<item value="341" key="size.x"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="SortOrdering"/>
