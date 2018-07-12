@@ -12,6 +12,7 @@ console.log("listo JQuery")
 				$("#message").html(hr.responseText);
 			},
 			success: function(html) {
+				console.log(html)
 				$("#result").html(html);
 			}
 		});
