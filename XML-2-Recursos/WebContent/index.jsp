@@ -14,17 +14,10 @@
  <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
 </head>
 <body>
-	<!-- 
-	<ct:tipoRecursos nombreHTML="nombreHTML" opcionTodos="N" />    opcionTodos="N" NoDefault <br/> 
-	<ct:tipoRecursos nombreHTML="nombreHTML" opcionTodos="S" />    opcionTodos="S" NoDefault <br/> 
-	
-	<ct:tipoRecursos nombreHTML="nombreHTML" opcionTodos="N" tipoRecurso="C"/> opcionTodos="N" WithDefault <br/> 
-	<ct:tipoRecursos nombreHTML="nombreHTML" opcionTodos="S" tipoRecurso="C"/> opcionTodos="S" WithDefault <br/> 
-	!-->
-	
-	<ct:tipoRecursos nombreHTML="tipoRecursos" opcionTodos="S" tipoRecurso="C"/> <br/>
-	
-	<ct:getListaPropietarios nombre_html="getListaPropietarios" tipo_propietario="A" area="2"/>
+<div id="message"> </div>
+	<div id="main">
+	<ct:tipoRecursos nombreHTML="tipo_recurso" opcionTodos="S" tipoRecurso="C"/> <br/>
 	
 	<div id="recursos"></div>
+	</div>
 </body>

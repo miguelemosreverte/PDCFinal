@@ -2,16 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="codigo_preseleccionado" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="\n"/>
 			<item value="tipo_recurso"/>
 			<item value="reclamo"/>
 			<item value="&apos;?&apos;"/>
-			<item value="\n"/>
 			<item value="GrupoRegistradoBean"/>
 			<item value="generatePrimaryKey"/>
 			<item value="cant"/>
@@ -25,9 +25,9 @@
 			<item value="..|"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="codigo_preseleccionado"/>
 			<item value="?"/>
-			<item value=""/>
 			<item value="xsd"/>
 		</list>
 	</section>

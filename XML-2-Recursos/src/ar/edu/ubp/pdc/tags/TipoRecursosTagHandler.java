@@ -33,9 +33,6 @@ public class TipoRecursosTagHandler extends SimpleTagSupport {
 	private String opcionTodos;
 	private String tipoRecurso;
 	private String sanitizedTipoRecurso = "";
-	
-	
-	
 
 	public TipoRecursosTagHandler() {
 		// TODO Auto-generated constructor stub
@@ -67,7 +64,6 @@ public class TipoRecursosTagHandler extends SimpleTagSupport {
 			TipoRecursoBean trb;
 			for (int i = 0, len = tipos_recursos.getLength(); i < len; i++) {
 				trb = new TipoRecursoBean();
-				
 				 trb.setNombre(xPath.compile(".").evaluate(tipos_recursos.item(i), XPathConstants.STRING).toString().toLowerCase());
 				 trb.setCodigo(xPath.compile("@codigo").evaluate(tipos_recursos.item(i), XPathConstants.STRING).toString().toLowerCase());
 				 recursos.add(trb);
@@ -102,7 +98,7 @@ public class TipoRecursosTagHandler extends SimpleTagSupport {
 	}
 	
 	private String createRadioInput(boolean checked, String value, String label) {
-		return "<input type=\"radio\"  name=\"categoria\"  value=\""+value+"\" "
+		return "<input type=\"radio\"  name=\""+this.nombreHTML+"\"  value=\""+value+"\" "
 				+ (checked? "checked": "") + ">" 
 				+ label ;
 	}
