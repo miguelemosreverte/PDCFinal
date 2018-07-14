@@ -46,11 +46,10 @@ public class ListaRecursosDB {
 					p.setDesc_recurso(result.getString("desc_recurso"));
 					p.setCod_tipo_recurso(result.getString("cod_tipo_recurso"));
 					p.setTipo_propietario(result.getString("tipo_propietario"));
-					p.setNro_leg_personal(result.getString("nro_leg_personal"));
-					p.setNro_area(result.getString("nro_area"));
+					p.setNro_leg_personal(result.getInt("nro_leg_personal"));
+					p.setNro_area(result.getInt("nro_area"));
 					p.setVigente(result.getString("vigente"));
-					p.setNro_recurso(result.getString("nro_recurso"));
-					
+					p.setNro_recurso(result.getInt("nro_recurso"));
 					listaRecursos.add(p);
 			    }
 				stmt.close();

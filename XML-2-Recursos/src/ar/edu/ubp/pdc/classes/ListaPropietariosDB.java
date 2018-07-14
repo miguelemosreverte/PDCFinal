@@ -13,8 +13,8 @@ public class ListaPropietariosDB {
 
 	public static void main(String p[]) {
 		String tipo_propietario = "A";
-		String nro_leg_personal = "2";
-		String nro_area = null;
+		Integer nro_leg_personal = 2 ;
+		Integer nro_area = null;
 		try {
 			LinkedList<PropietariosBean> listaPropitarios= getPropietarios(tipo_propietario,nro_leg_personal,nro_area);
 			System.out.println(listaPropitarios.toString());
@@ -26,8 +26,8 @@ public class ListaPropietariosDB {
 	}
 	public static LinkedList<PropietariosBean> getPropietarios(
 			String tipo_propietario,
-			String nro_leg_personal,
-			String nro_area
+			Integer nro_leg_personal,
+			Integer nro_area
 			
 			) throws ClassNotFoundException, SQLException{
 		/*
@@ -50,15 +50,19 @@ public class ListaPropietariosDB {
 				stmt = conn.prepareCall("{CALL dbo.get_lista_propietarios(?,?,?)}");
 	
 				stmt.setString(1, tipo_propietario);
+				if(nro_leg_personal==null && nro_area==null) {
+					stmt.setNull(2, java.sql.Types.INTEGER);
+					stmt.setNull(3, java.sql.Types.INTEGER);
+				}
 				
 				if (nro_leg_personal != null) {
-					stmt.setInt(2, Integer.parseInt(nro_leg_personal));
+					stmt.setInt(2, nro_leg_personal);
 					stmt.setNull(3, java.sql.Types.INTEGER);
-				}else {
-					if (nro_area != null) {
+				
+				}else if (nro_area != null) {
 						stmt.setNull(2, java.sql.Types.INTEGER);
-						stmt.setInt(3, Integer.parseInt(nro_area));
-					}
+						stmt.setInt(3, nro_area);
+					
 				}
 				result = stmt.executeQuery();
 				listaPropietarios = new LinkedList();
@@ -76,7 +80,7 @@ public class ListaPropietariosDB {
 				return listaPropietarios;
 			}
 			catch(SQLException e) {
-				System.out.println(e.toString());
+				//System.out.println(e.toString());
 				throw e;
 			}finally {
 				conn.close();

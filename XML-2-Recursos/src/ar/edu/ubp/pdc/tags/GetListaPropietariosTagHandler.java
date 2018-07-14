@@ -13,11 +13,6 @@ public class GetListaPropietariosTagHandler extends SimpleTagSupport {
 	public GetListaPropietariosTagHandler() {
 		// TODO Auto-generated constructor stub
 	}
-	private String nombre_html;
-	private String tipo_propietario;
-	private String area;
-	private String personal;
-	
 	public String getNombre_html() {
 		return nombre_html;
 	}
@@ -34,22 +29,26 @@ public class GetListaPropietariosTagHandler extends SimpleTagSupport {
 		this.tipo_propietario = tipo_propietario;
 	}
 
-	public String getArea() {
+	public Integer getArea() {
 		return area;
 	}
 
-	public void setArea(String area) {
+	public void setArea(Integer area) {
 		this.area = area;
 	}
 
-	public String getPersonal() {
+	public Integer getPersonal() {
 		return personal;
 	}
 
-	public void setPersonal(String personal) {
+	public void setPersonal(Integer personal) {
 		this.personal = personal;
 	}
-
+	private String nombre_html;
+	private String tipo_propietario;
+	private Integer area;
+	private Integer personal;
+	
 	@Override
 	public void doTag() throws JspException, IOException {
 		super.doTag();
@@ -57,6 +56,7 @@ public class GetListaPropietariosTagHandler extends SimpleTagSupport {
 		LinkedList<PropietariosBean> recursos;
 		try {
 			recursos = ListaPropietariosDB.getPropietarios(this.tipo_propietario, this.personal, this.area);
+			
 			out.println(this.createSelect(recursos, this.nombre_html));
 		} catch (ClassNotFoundException | SQLException e) {
 			out.println(e.getMessage());
@@ -65,9 +65,19 @@ public class GetListaPropietariosTagHandler extends SimpleTagSupport {
 	}
 	
 	private String createOptionHTML(PropietariosBean propietario) {
-		String nombre = propietario.getNombre();	
-		String result =  "<option value=\""+ nombre +"\" >"+ nombre +"</option>";
-		return result;
+		String nombre = propietario.getNombre();
+		String result = "";
+		if(this.area == null && this.personal==null) {
+			result =  "<option value=\""+((propietario.getNro_area()!=null)?propietario.getNro_area():propietario.getNro_leg_personal())+"\">"+ nombre +"</option>";
+		}else if(this.area !=null ) {
+		   result =  "<option value=\""+ this.area +"\""+ ((this.area == propietario.getNro_area())?"selected":"") +">"+ nombre +"</option>";
+		 
+		}else if(this.personal!=null){
+		   result =  "<option value=\""+ this.personal +"\""+ ((this.personal == propietario.getNro_leg_personal())?"selected":"") +">"+ nombre +"</option>";
+		 
+		}
+		 return result;
+		
 	}
 	private String createSelect(LinkedList<PropietariosBean> recursos, String nameHTML) {
 		String result = "<select name="+nameHTML+">";

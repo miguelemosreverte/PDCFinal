@@ -1,12 +1,8 @@
 jQuery(document).ready(function() {
 	console.log("listo JQuery");
-	$("#main" ).on("change","[name=tipo_recurso]",function(e){
-		const thisElement = $(e.target);
-		//console.log(thisElement.serialize());
 			$.ajax({
 				url: "./getRecursos.jsp",
 				type: "get",
-				data: thisElement.serialize(),
 				dataType: "html",
 				error: function(hr) {
 					$("#message").html(hr.responseText);
@@ -15,17 +11,15 @@ jQuery(document).ready(function() {
 					$("#recursos").html(html)
 				}
 			});
-		
-    });
-	
 	
 	$("#main").on("change","[name^=tipo_propietario]:checked",function(e){
-		const thisElement = $(e.target);
-		//console.log(thisElement.serialize());
-			$.ajax({
+		 const thisElement= $(e.target);	
+		 const thisElementValue = $(e.target).val();
+		 $(thisElement).closest("td").find("[name=tipo_propietario]").val(thisElementValue);
+		 $.ajax({
 				url: "./changeCustom.jsp",
 				type: "get",
-				data: thisElement.serialize(),
+				data:  $(thisElement).closest("td").find("[name=tipo_propietario]").serialize(),
 				dataType: "html",
 				error: function(hr) {
 					$("#message").html(hr.responseText);
@@ -36,12 +30,24 @@ jQuery(document).ready(function() {
 					
 				}
 			});
-		
-    });
+	  });
+	
+	$("#main").on("click","#boton_agregar",function(e){
+		 /*console.log($('input:not([value!=""])'))*/
+		 // $("select")
+		 e.preventDefault();
+		 const thisElement = $(e.target).text();
+		 console.log(thisElement);
+	 });
+    
+	 $("#main").on("change","[name^=tipo_recurso]:checked",function(e){
+		 const thisElement= $(e.target);	
+		 const thisElementValue = $(e.target).val();
+		 $(thisElement).closest("td").find("[name=tipo_recurso]").val(thisElementValue);
+	 });
+	
 	
 });
-
-
 
 
 var jX = {

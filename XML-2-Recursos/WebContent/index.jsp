@@ -16,8 +16,6 @@
 <body>
 <div id="message"> </div>
 	<div id="main">
-	<ct:tipoRecursos nombreHTML="tipo_recurso" opcionTodos="S" tipoRecurso="C"/> <br/>
-	
 	<div id="recursos"></div>
 	</div>
 </body>

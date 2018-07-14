@@ -21,29 +21,16 @@ public class GetRecursos extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		if(request.getParameterMap().size()>0  && request.getParameter("tipo_recurso")!=null) {
 		 try {
 			final LinkedList<RecursoBean> recursos = ListaRecursosDB.getRecursos();
-			final String rec = request.getParameter("tipo_recurso").toUpperCase();
-			System.out.println(rec);
-			if(rec.equals("")){
-				request.setAttribute("recursos",  recursos); 
-			}else {
-				final LinkedList<RecursoBean> recursosFiltrados = (LinkedList<RecursoBean>) recursos.stream()
-															.filter ( r ->
-																		r.getCod_tipo_recurso().equals(rec)
-																	)
-															.collect(Collectors.toCollection(LinkedList::new));
-															
-				request.setAttribute("recursos",  recursosFiltrados);
-			}
+	        request.setAttribute("recursos",  recursos); 
 			gotoPage("/mostrar_recursos.jsp", request, response);
 		 } catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			printError(e.getMessage(), request, response);
 		}
-	  }
+	  
 	}
 	private void printError(String error, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{

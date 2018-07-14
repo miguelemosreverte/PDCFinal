@@ -1,9 +1,0 @@
-package ar.edu.ubp.pdc.beans;
-
-public class FechaHotelesBean {
-
-	public FechaHotelesBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

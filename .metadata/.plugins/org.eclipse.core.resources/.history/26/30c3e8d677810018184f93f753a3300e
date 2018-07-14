@@ -1,9 +1,0 @@
-package ar.edu.ubp.pdc.tags;
-
-public class LocalidadesTagHandler {
-
-	public LocalidadesTagHandler() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

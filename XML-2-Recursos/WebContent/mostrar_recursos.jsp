@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.util.stream.Collectors,ar.edu.ubp.pdc.beans.*"  %>
  <%@ taglib uri="/WEB-INF/tld/customs.tld" prefix="ct" %>
-
+<form> 
 <table class="table">
   <tr>
     <th>tipo_recurso</th>
@@ -11,51 +11,59 @@
   </tr>
   
 <%final LinkedList<RecursoBean> recursos = (LinkedList<RecursoBean>)request.getAttribute("recursos");%>
-<%! int i = 0; %>
+
  <%for(RecursoBean recurso : recursos){%>
+       <% String desabilitado = (recurso.getVigente().toLowerCase().equals("n")?"disabled":""); %>
   		<tr> 
   			<td>
-  			    <input  type ="hidden" value="<%= recurso.getCod_tipo_recurso() %>" name="cod_tipo_recurso">
-  			    <%if(recurso.getCod_tipo_recurso().toLowerCase().equals("c")){ %>
-  			     <label>Computadora</label>
-  			    <%}else if(recurso.getCod_tipo_recurso().toLowerCase().equals("i")){%>
-  			      <label>Impresora</label>
-  			    <%}%>
+  			<%String n = "tipo_recurso"+ recurso.getNro_recurso().toString();%>
+  			<ct:tipoRecursos nombreHTML="<%=n%>" opcionTodos="N" tipoRecurso="<%=recurso.getCod_tipo_recurso()%>"/>
+  			 <input type="hidden" name="tipo_recurso" value="<%=recurso.getCod_tipo_recurso()%>">  
   			</td>
   			<td> 
-  			 	 <input type ="hidden" value="<%= recurso.getNro_recurso() %>" name="nro_recurso">
-  			 	 <input type ="text" value="<%= recurso.getDesc_recurso() %>" name="desc_recurso">
-  				 
+  			 	 <input type ="hidden" value="<%=recurso.getNro_recurso() %>" name="nro_recurso">
+  			 	 <input type ="text" value="<%=recurso.getDesc_recurso() %>" name="desc_recurso">
   			</td>
   			<td>
-  			 <%if(recurso.getTipo_propietario().toLowerCase().equals("p")){%>
-  				 <label class="radio-inline"><input type="radio" name="tipo_propietario<%=i%>" value="p" checked >Personal</label>
-  				 <label class="radio-inline"><input type="radio" name="tipo_propietario<%=i%>"value="a">Area</label>
-  		     <%}else if(recurso.getTipo_propietario().toLowerCase().equals("a")){%>
-  		         <label class="radio-inline"><input type="radio" name="tipo_propietario<%=i%>"  value="p">Personal</label>
-  				 <label class="radio-inline"><input type="radio" name="tipo_propietario<%=i%> " value="a"checked >Area</label>
-  		     <%}%>
+  				 <label class="radio-inline">
+  				 	<input type="radio" name="tipo_propietario<%=recurso.getNro_recurso()%>" 
+  				 		   value="P" id="tipo_propietario<%=recurso.getNro_recurso()%>"
+  				 		    <%=(recurso.getTipo_propietario().equals("P")?"checked":"")%>
+  				 	/>
+  				    Personal
+  				 </label>
+  				 <label class="radio-inline">
+  				 	<input type="radio" name="tipo_propietario<%=recurso.getNro_recurso()%>" 
+  				 		   value="A" id="tipo_propietario<%=recurso.getNro_recurso()%>"  
+  				 		   <%=(recurso.getTipo_propietario().equals("A")?"checked":"")%>
+  				    />
+  				 	Area
+  				 </label>
+  	             <input type="hidden" name="tipo_propietario" value="<%=recurso.getTipo_propietario()%>"> 
   			</td>
   			<td> 
   				<div name="custom_div">
-  			    <% String tipoPropietario = recurso.getTipo_propietario();
-  			       String area = recurso.getNro_area();
-  			       String personal = recurso.getNro_leg_personal();
-  			       if (area != null) {%>
-  						<ct:getListaPropietarios nombre_html="getListaPropietarios" tipo_propietario="<%= tipoPropietario%>" area="<%= area%>"/>  				
-  			      <%}else if (personal != null) {%>
-  				        <ct:getListaPropietarios nombre_html="getListaPropietarios" tipo_propietario="<%= tipoPropietario%>" personal="<%= personal%>"/>
+  			     <% String tipoPropietario = recurso.getTipo_propietario();
+  			       if (recurso.getNro_area() != null) {%>
+  						<ct:getListaPropietarios nombre_html="propietario"  tipo_propietario="<%= tipoPropietario%>" area="<%= recurso.getNro_area()%>"/>  				
+  			      <%}else if (recurso.getNro_leg_personal() != null) {%>
+  				        <ct:getListaPropietarios nombre_html="propietario" tipo_propietario="<%= tipoPropietario%>" personal="<%= recurso.getNro_leg_personal()%>"/>
   			      <%}%>
   			    </div>
   			</td>
   			<td>
-  			<%if(recurso.getVigente().toLowerCase().equals("s")){ %>
-  		        <input type="checkbox" name="vigente" checked />
-  			<%}else{%>
-  			    <input type="checkbox" name="vigente"/>
-  			<%}%>
+  		         <input type="checkbox" 
+  		         		name="vigente" 
+  		         		id="vigente<%=recurso.getNro_recurso()%>" 
+  		         		<%=(recurso.getVigente().toLowerCase().equals("s")?"checked":"") %> 
+  		         />
   			</td>
-  			<% i++; %>
+  			
   		</tr>
  <%}%>
 </table>
+<button class="btn btn-primary" id="boton_agregar" name="boton_agregar">Agregar</button>
+</form>
+
+
+

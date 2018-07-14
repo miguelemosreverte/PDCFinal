@@ -14,7 +14,7 @@
 		<attribute>
 			<name>nombreHTML</name>
 			<required>true</required>
-			<rtexprvalue>false</rtexprvalue>
+			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.string</type>
 		</attribute>
 		
@@ -28,7 +28,7 @@
 		<attribute>
 			<name>tipoRecurso</name>
 			<required>false</required>
-			<rtexprvalue>false</rtexprvalue>
+			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.string</type>
 		</attribute>
 	</tag>
@@ -55,16 +55,13 @@
 			<name>area</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.string</type>
+			<type>Integer</type>
 		</attribute>
-		
-		
-		
 		<attribute>
 			<name>personal</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.string</type>
+			<type>Integer</type>
 		</attribute>
 		
 	</tag>

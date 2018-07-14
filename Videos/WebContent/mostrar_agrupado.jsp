@@ -24,7 +24,6 @@
     No existen videos que satifagan el criterio de busqueda especificado
     <%}else{%>
     
-  
     <% for(String categoria :categorias){ %>
        	<ul class="elemento-categoria" ><%=categoria%>
      <%for(VideoBean video :videos){
