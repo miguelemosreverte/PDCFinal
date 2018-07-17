@@ -27,14 +27,17 @@ public class GetRecursos extends HttpServlet {
 			 LinkedList<RecursoBean> current = null;
 			 final LinkedList<RecursoBean> recursos = ListaRecursosDB.getRecursos();
 			 if(request.getSession().getAttribute("current")!=null){
-		     HttpSession sess = request.getSession();
-		     current = (LinkedList <RecursoBean>)sess.getAttribute("current");
-		     for(RecursoBean rb :current){
-		      System.out.println(rb.getNro_recurso());
+				 HttpSession sess = request.getSession();
+				 current = (LinkedList <RecursoBean>)sess.getAttribute("current");
+				 if(recursos.equals(current)) {
+			    	 request.setAttribute("recursos",  recursos);
+			     }else {
+			    	 request.setAttribute("recursos", current);
+			     }
+		     }else {
+		    	 request.setAttribute("recursos",  recursos);
 		     }
-		    }
-	        request.setAttribute("recursos",  recursos); 
-	        request.setAttribute("current", current);
+		     
 			gotoPage("/mostrar_recursos.jsp", request, response);
 		 } catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

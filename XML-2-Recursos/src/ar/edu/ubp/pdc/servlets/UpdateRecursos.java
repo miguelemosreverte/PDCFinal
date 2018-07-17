@@ -72,6 +72,7 @@ public class UpdateRecursos extends HttpServlet {
 				conn.commit();
 				stmt.close();
 				System.out.println("success");
+				request.getSession().setAttribute("current", null);
 			}
 			catch(SQLException e) {
 				conn.rollback();

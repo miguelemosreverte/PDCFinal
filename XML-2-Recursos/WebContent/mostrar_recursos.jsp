@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.util.stream.Collectors,ar.edu.ubp.pdc.beans.*"  %>
  <%@ taglib uri="/WEB-INF/tld/customs.tld" prefix="ct" %>
 
-
-
 <form action="javascript:void(null)" onsubmit="JRecursos.sendForm(event)">
 <table class="table">
   <tr>
@@ -58,6 +56,6 @@
 </table>
 <button class="btn btn-primary" id="boton_guardar"  name="boton_agregar">Guardar</button>
 <button type="button" class="btn btn-danger" id="boton_cancelar" onclick="JRecursos.getRecursos();" name="boton_cancelar">Cancelar</button>
-<button class="btn btn-primary" type="button" id="boton_guardar_temp"  name="boton_guardar_temp" onclick="JRecursos.guardarTemporalmente()">Guardar Temporalmente</button>
+<button class="btn btn-primary" type="button" id="boton_guardar_temp"  name="boton_guardar_temp" onclick="JRecursos.guardarTemporalmente();">Guardar Temporalmente</button>
 </form>
 

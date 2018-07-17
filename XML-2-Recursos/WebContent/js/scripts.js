@@ -78,8 +78,9 @@ var JRecursos = {
 		},
 		guardarTemporalmente:function(){
 			console.log("temp");
+			console.log($("form").serialize());
 			$.ajax({
-				url: "./saveSession.jsp",
+				url: "./guardarSession.jsp",
 				type: "post",
 				data:  $("form").serialize(),
 				dataType: "html",
@@ -87,8 +88,7 @@ var JRecursos = {
 					$("#message").html(hr.responseText);
 				},
 				success: function(html) {
-					//JRecursos.getRecursos();
-					$("#recursos").html(html)
+					//$("#recursos").html(html)
 				}
 			});
 		},
