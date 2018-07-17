@@ -40,38 +40,44 @@ public class ListaPropietariosDB {
 		ResultSet result;
 		LinkedList<PropietariosBean> listaPropietarios= null;
 		PropietariosBean p;
-
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa","98Thk7oo08L#F");
 			conn.setAutoCommit(true);
-			
 			try {
 				stmt = conn.prepareCall("{CALL dbo.get_lista_propietarios(?,?,?)}");
-	
 				stmt.setString(1, tipo_propietario);
 				if(nro_leg_personal==null && nro_area==null) {
 					stmt.setNull(2, java.sql.Types.INTEGER);
 					stmt.setNull(3, java.sql.Types.INTEGER);
-				}
-				
-				if (nro_leg_personal != null) {
+					
+				}else if (nro_leg_personal != null) {
 					stmt.setInt(2, nro_leg_personal);
 					stmt.setNull(3, java.sql.Types.INTEGER);
 				
 				}else if (nro_area != null) {
-						stmt.setNull(2, java.sql.Types.INTEGER);
-						stmt.setInt(3, nro_area);
-					
+					stmt.setNull(2, java.sql.Types.INTEGER);
+					stmt.setInt(3, nro_area);
+				
 				}
 				result = stmt.executeQuery();
-				listaPropietarios = new LinkedList();
+				listaPropietarios = new LinkedList<PropietariosBean>();
 				//nombre,nro_leg_personal ,nro_area,seleccionadon,nro_orden
+				Integer nro_leg = null;
+				Integer nro_ar = null;
 				while(result.next()) {
+					nro_leg= null;
+					nro_ar = null;
 					p = new PropietariosBean();
 					p.setNombre(result.getString("nombre"));
-					p.setNro_leg_personal(result.getInt("nro_leg_personal"));
-					p.setNro_area(result.getInt("nro_area"));
+					nro_leg = result.getInt("nro_leg_personal");
+					if(!result.wasNull()) {
+					   p.setNro_leg_personal(nro_leg);
+					}
+					nro_ar = result.getInt("nro_area");
+					if(!result.wasNull()) {
+					   p.setNro_area(nro_ar);	
+					}
 					p.setSeleccionado(result.getString("seleccionado"));
 					p.setNro_orden(result.getInt("nro_orden"));
 					listaPropietarios.add(p);
@@ -86,16 +92,13 @@ public class ListaPropietariosDB {
 				conn.close();
 			}
 		}
-			
 		catch (ClassNotFoundException | SQLException e) {
 			System.out.println(e.toString());
 			throw e;
 		}
 	}
-	
 	public ListaPropietariosDB() {
-		// TODO Auto-generated constructor stub
-		
+		// TODO Auto-generated constructor stub	
 	}
 
 }

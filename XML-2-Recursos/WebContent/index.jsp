@@ -16,6 +16,8 @@
 <body>
 <div id="message"> </div>
 	<div id="main">
+	
 	<div id="recursos"></div>
+
 	</div>
 </body>

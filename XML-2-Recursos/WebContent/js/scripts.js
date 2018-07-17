@@ -1,16 +1,7 @@
 jQuery(document).ready(function() {
 	console.log("listo JQuery");
-			$.ajax({
-				url: "./getRecursos.jsp",
-				type: "get",
-				dataType: "html",
-				error: function(hr) {
-					$("#message").html(hr.responseText);
-				},
-				success: function(html) {
-					$("#recursos").html(html)
-				}
-			});
+			
+	JRecursos.getRecursos();
 	
 	$("#main").on("change","[name^=tipo_propietario]:checked",function(e){
 		 const thisElement= $(e.target);	
@@ -32,27 +23,73 @@ jQuery(document).ready(function() {
 			});
 	  });
 	
-	$("#main").on("click","#boton_agregar",function(e){
-		 /*console.log($('input:not([value!=""])'))*/
-		 // $("select")
-		 e.preventDefault();
-		 const thisElement = $(e.target).text();
-		 console.log(thisElement);
-	 });
-    
-	 $("#main").on("change","[name^=tipo_recurso]:checked",function(e){
+	$("#main").on("change","[name^=tipo_recurso]:checked",function(e){
 		 const thisElement= $(e.target);	
 		 const thisElementValue = $(e.target).val();
 		 $(thisElement).closest("td").find("[name=tipo_recurso]").val(thisElementValue);
 	 });
 	
+	$("#main").on("change","[name^=vigente]",function(e){
+		 const thisElement= $(e.target);
+		 console.log(thisElement.prop("checked"));
+		 if(thisElement.prop("checked")){
+			 $(thisElement).closest("td").find("[name=vigente]").val("S");
+			// $(thisElement).closest("tr").find(":radio,:input").prop("disabled",false)
+			 
+		 }else{
+			 $(thisElement).closest("td").find("[name=vigente]").val("N");
+			// $(thisElement).closest("tr").find(":radio,:input").prop("disabled",true);
+			 //$(thisElement).prop("disabled",false);
+		 }
+		 
+	 });
+	
 	
 });
-
-
-var jX = {
-		a: function() {
-			
+var JRecursos = {
+		sendForm: function(e) {
+			 e.preventDefault();
+			 console.log($("form").serialize())
+			$.ajax({
+					url: "./updateRecursos.jsp",
+					type: "post",
+					data:  $("form").serialize(),
+					dataType: "html",
+					error: function(hr) {
+						$("#message").html(hr.responseText);
+					},
+					success: function(html) {
+						JRecursos.getRecursos();		
+					}
+				});
 		},
-		
+		getRecursos: function(e){
+			$.ajax({
+				url: "./getRecursos.jsp",
+				type: "get",
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+				},
+				success: function(html) {
+					$("#recursos").html(html)
+				}
+			});
+		},
+		guardarTemporalmente:function(){
+			console.log("temp");
+			$.ajax({
+				url: "./saveSession.jsp",
+				type: "post",
+				data:  $("form").serialize(),
+				dataType: "html",
+				error: function(hr) {
+					$("#message").html(hr.responseText);
+				},
+				success: function(html) {
+					//JRecursos.getRecursos();
+					$("#recursos").html(html)
+				}
+			});
+		},
 }

@@ -24,6 +24,8 @@ public class ListaRecursosDB {
 		ResultSet result;
 		LinkedList<RecursoBean> listaRecursos= new LinkedList<>();
 		RecursoBean p;
+		Integer nro_ar = 0 ;
+		Integer nro_leg = 0;
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa","98Thk7oo08L#F");
@@ -42,12 +44,24 @@ public class ListaRecursosDB {
 						"  from dbo.recursos (nolock)" + 
 						" order by desc_recurso");
 			while(result.next()) {
+				    nro_ar = null ;
+				    nro_leg = null;
 					p = new RecursoBean();
 					p.setDesc_recurso(result.getString("desc_recurso"));
 					p.setCod_tipo_recurso(result.getString("cod_tipo_recurso"));
 					p.setTipo_propietario(result.getString("tipo_propietario"));
-					p.setNro_leg_personal(result.getInt("nro_leg_personal"));
-					p.setNro_area(result.getInt("nro_area"));
+					nro_leg = result.getInt("nro_leg_personal");
+					if(result.wasNull()) {
+						p.setNro_leg_personal(null);
+					}else {
+						p.setNro_leg_personal(nro_leg);
+					}
+					nro_ar = result.getInt("nro_area");
+					if(result.wasNull()) {
+						p.setNro_area(null);
+					}else {
+					    p.setNro_area(nro_ar);	
+					}
 					p.setVigente(result.getString("vigente"));
 					p.setNro_recurso(result.getInt("nro_recurso"));
 					listaRecursos.add(p);

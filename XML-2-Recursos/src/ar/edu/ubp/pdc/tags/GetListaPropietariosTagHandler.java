@@ -53,42 +53,41 @@ public class GetListaPropietariosTagHandler extends SimpleTagSupport {
 	public void doTag() throws JspException, IOException {
 		super.doTag();
 		JspWriter out = this.getJspContext().getOut();		
-		LinkedList<PropietariosBean> recursos;
+		LinkedList<PropietariosBean> propietarios;
+		Integer nro_propietario;
 		try {
-			recursos = ListaPropietariosDB.getPropietarios(this.tipo_propietario, this.personal, this.area);
+			propietarios = ListaPropietariosDB.getPropietarios(this.tipo_propietario, this.personal, this.area);
 			
-			out.println(this.createSelect(recursos, this.nombre_html));
+			if(this.area==null && this.personal==null) {
+				out.println("<select name=\""+this.nombre_html+"\" required>");
+				for(PropietariosBean prop : propietarios) {
+					if(prop.getNro_area()==null && prop.getNro_leg_personal()==null) {
+						out.println("<option value=\"\" >" + prop.getNombre() +"</option>");
+					}else {
+				        nro_propietario = ((prop.getNro_area()!=null)?prop.getNro_area():prop.getNro_leg_personal());
+					    out.println("<option value=\""+nro_propietario+"\">" + prop.getNombre() + "</option>");
+					}
+				}
+				out.println("</select>");
+			}
+			else {
+				if(this.area!=null || this.personal!=null) {
+					out.println("<select name=\""+this.nombre_html+"\" required>");
+					for(PropietariosBean prop : propietarios) {
+						if(prop.getNro_area()==null && prop.getNro_leg_personal()==null) {
+							out.println("<option value=\"\" >" + prop.getNombre() +"</option>");
+						}else {
+					        nro_propietario = ((prop.getNro_area()!=null)?prop.getNro_area():prop.getNro_leg_personal());
+						    out.println("<option value=\""+nro_propietario+"\"" +((prop.getSeleccionado().equals("S")) ?"selected":"")+" >" + prop.getNombre() + "</option>");
+						}
+					}
+					out.println("</select>");
+				}
+			}
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			out.println(e.getMessage());
 		}
 		
 	}
-	
-	private String createOptionHTML(PropietariosBean propietario) {
-		String nombre = propietario.getNombre();
-		String result = "";
-		if(this.area == null && this.personal==null) {
-			result =  "<option value=\""+((propietario.getNro_area()!=null)?propietario.getNro_area():propietario.getNro_leg_personal())+"\">"+ nombre +"</option>";
-		}else if(this.area !=null ) {
-		   result =  "<option value=\""+ this.area +"\""+ ((this.area == propietario.getNro_area())?"selected":"") +">"+ nombre +"</option>";
-		 
-		}else if(this.personal!=null){
-		   result =  "<option value=\""+ this.personal +"\""+ ((this.personal == propietario.getNro_leg_personal())?"selected":"") +">"+ nombre +"</option>";
-		 
-		}
-		 return result;
-		
-	}
-	private String createSelect(LinkedList<PropietariosBean> recursos, String nameHTML) {
-		String result = "<select name="+nameHTML+">";
-		for(PropietariosBean recurso : recursos) {
-			result += this.createOptionHTML(recurso);
-		}
-		result += "</select>";
-		return result;
-		
-	}
-	
-
-
-}
+ } 

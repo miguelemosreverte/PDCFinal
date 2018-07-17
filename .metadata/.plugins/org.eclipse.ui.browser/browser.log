@@ -532,3 +532,50 @@ Jul 14, 2018 04:14:47.92 [Parent 3461, Gecko_IOThread] WARNING: pipe error (65):
 Jul 14, 2018 04:14:47.93 [Parent 3461, Gecko_IOThread] WARNING: pipe error (179): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 Jul 14, 2018 04:14:47.94 [Parent 3461, Gecko_IOThread] WARNING: pipe error (114): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 Jul 14, 2018 04:14:47.94 [Parent 3461, Gecko_IOThread] WARNING: pipe error (53): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+
+Jul 16, 2018 18:25:09.30 NEW SESSION
+Jul 16, 2018 18:25:09.30 
+Jul 16, 2018 18:25:09.34 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:09.34 
+Jul 16, 2018 18:25:09.34 
+Jul 16, 2018 18:25:09.34 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:09.34 
+Jul 16, 2018 18:25:13.47 
+Jul 16, 2018 18:25:13.47 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:13.47 
+Jul 16, 2018 18:25:42.50 [Child 13826, MediaPlayback #2] WARNING: Decoder=7f4db53cf200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:25:42.52 [Child 13826, MediaPlayback #4] WARNING: Decoder=7f4db53cf200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:25:42.55 [Child 13826, MediaPlayback #4] WARNING: Decoder=7f4db53cf200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:25:42.56 [Child 13826, MediaPlayback #1] WARNING: Decoder=7f4db53cf200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:25:42.89 
+Jul 16, 2018 18:25:42.90 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:42.90 
+Jul 16, 2018 18:25:42.90 
+Jul 16, 2018 18:25:42.90 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:42.90 
+Jul 16, 2018 18:25:59.06 
+Jul 16, 2018 18:25:59.06 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:59.06 
+Jul 16, 2018 18:25:59.06 
+Jul 16, 2018 18:25:59.06 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:25:59.06 
+Jul 16, 2018 18:26:00.34 [Child 13826, MediaPlayback #2] WARNING: Decoder=7f4db4b66b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:00.37 [Child 13826, MediaPlayback #3] WARNING: Decoder=7f4db4b66b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:01.57 
+Jul 16, 2018 18:26:01.57 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 18:26:01.57 
+Jul 16, 2018 18:26:08.29 [Child 13826, MediaPlayback #1] WARNING: Decoder=7f4db8bc2b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:08.31 [Child 13826, MediaPlayback #3] WARNING: Decoder=7f4db8bc2b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:08.32 [Child 13826, MediaPlayback #3] WARNING: Decoder=7f4db8bc2b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:08.34 [Child 13826, MediaPlayback #2] WARNING: Decoder=7f4db8bc2b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 18:26:08.36 [Child 13826, MediaPlayback #1] WARNING: Decoder=7f4db8bc2b60 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-QrvFEH/firefox-61.0+build3/dom/media/MediaDecoderStateMachine.cpp, line 3411
+Jul 16, 2018 19:06:19.32 
+Jul 16, 2018 19:06:19.34 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 19:06:19.34 
+Jul 16, 2018 19:06:19.34 
+Jul 16, 2018 19:06:19.34 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+Jul 16, 2018 19:06:19.34 
+Jul 16, 2018 19:33:21.81 [Parent 2955, Gecko_IOThread] WARNING: pipe error (87): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 16, 2018 19:33:21.82 [Parent 2955, Gecko_IOThread] WARNING: pipe error (54): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 16, 2018 20:44:52.61 [Parent 19493, Gecko_IOThread] WARNING: pipe error (46): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+Jul 16, 2018 20:44:52.62 [Parent 19493, Gecko_IOThread] WARNING: pipe error (59): Connection reset by peer: file /build/firefox-QrvFEH/firefox-61.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

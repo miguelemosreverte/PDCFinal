@@ -1,9 +1,0 @@
-package ar.edu.ubp.pdc.servlets;
-
-public class ReservarServlet {
-
-	public ReservarServlet() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
